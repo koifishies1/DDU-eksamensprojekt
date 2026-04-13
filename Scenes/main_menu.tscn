@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bq8di6i5mxy2o"]
+
+[node name="MainMenu" type="Node2D" unique_id=1011265623]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1765083118]
+offset_right = 1150.0
+offset_bottom = 648.0
+color = Color(1, 0, 1, 1)
+
+[node name="Button" type="Button" parent="." unique_id=1975402563]
+offset_left = 426.0
+offset_top = 241.0
+offset_right = 666.0
+offset_bottom = 309.0
+text = "start"
