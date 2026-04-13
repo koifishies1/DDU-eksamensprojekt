@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ehtomufjkmd0"
-path="res://.godot/imported/taskbar.png-612676f162a425206acd18d4521aad04.ctex"
+uid="uid://jsdtb5bqdeo"
+path="res://.godot/imported/NotepadPage.png-2bbfe9260391d2fe9fa32d1de4a766dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/taskbar.png"
-dest_files=["res://.godot/imported/taskbar.png-612676f162a425206acd18d4521aad04.ctex"]
+source_file="res://Assets/NotepadPage.png"
+dest_files=["res://.godot/imported/NotepadPage.png-2bbfe9260391d2fe9fa32d1de4a766dc.ctex"]
 
 [params]
 

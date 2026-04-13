@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cynoo5q456jj4"]
+[gd_scene format=3 uid="uid://cynoo5q456jj4"]
 
 [ext_resource type="Texture2D" uid="uid://d38lyiohwmgf" path="res://Assets/background.png" id="1_ebmjs"]
 [ext_resource type="Texture2D" uid="uid://ehtomufjkmd0" path="res://Assets/taskbar.png" id="2_3dryh"]
@@ -6,16 +6,19 @@
 [ext_resource type="FontFile" uid="uid://dqgpol2ay6t8e" path="res://Assets/ByteBounce.ttf" id="4_i6g32"]
 [ext_resource type="Texture2D" uid="uid://belkis7fq6m52" path="res://Assets/trash.png" id="5_wowpa"]
 [ext_resource type="Texture2D" uid="uid://g0yxwmifqj0y" path="res://Assets/notepad.png" id="6_i6g32"]
+[ext_resource type="Script" uid="uid://du0kvtaq6m1dl" path="res://Scenes/notepad.gd" id="7_1l0tm"]
+[ext_resource type="Texture2D" uid="uid://jsdtb5bqdeo" path="res://Assets/NotepadPage.png" id="8_v158k"]
+[ext_resource type="Texture2D" uid="uid://u7p5163euqt8" path="res://Assets/Night1Text.png" id="9_h4fw4"]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" unique_id=1271823493]
 
-[node name="gameController" type="Control" parent="."]
+[node name="gameController" type="Control" parent="." unique_id=518256140]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="background" type="TextureRect" parent="gameController"]
+[node name="background" type="TextureRect" parent="gameController" unique_id=364206667]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,7 +31,7 @@ texture = ExtResource("1_ebmjs")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="TextureRect" type="TextureRect" parent="gameController/background"]
+[node name="TextureRect" type="TextureRect" parent="gameController/background" unique_id=392814161]
 texture_filter = 1
 layout_mode = 0
 offset_left = -1.0
@@ -39,14 +42,14 @@ texture = ExtResource("2_3dryh")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="desktop" type="Control" parent="gameController"]
+[node name="desktop" type="Control" parent="gameController" unique_id=1690651393]
 layout_mode = 1
 anchor_right = 28.8
 anchor_bottom = 16.1
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="mailIcon" type="TextureButton" parent="gameController/desktop"]
+[node name="mailIcon" type="TextureButton" parent="gameController/desktop" unique_id=1206802996]
 texture_filter = 1
 layout_mode = 0
 offset_left = 81.0
@@ -57,7 +60,7 @@ texture_normal = ExtResource("3_wowpa")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="mailText" type="Label" parent="gameController/desktop/mailIcon"]
+[node name="mailText" type="Label" parent="gameController/desktop/mailIcon" unique_id=1660962320]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 80.0
@@ -68,7 +71,7 @@ theme_override_fonts/font = ExtResource("4_i6g32")
 theme_override_font_sizes/font_size = 39
 text = "Mail"
 
-[node name="recyclebinIcon" type="TextureButton" parent="gameController/desktop"]
+[node name="recyclebinIcon" type="TextureButton" parent="gameController/desktop" unique_id=368672978]
 texture_filter = 1
 layout_mode = 0
 offset_left = 72.0
@@ -79,7 +82,7 @@ texture_normal = ExtResource("5_wowpa")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="recyclebinText" type="Label" parent="gameController/desktop/recyclebinIcon"]
+[node name="recyclebinText" type="Label" parent="gameController/desktop/recyclebinIcon" unique_id=616546795]
 layout_mode = 0
 offset_left = -13.0
 offset_top = 86.0
@@ -90,8 +93,9 @@ theme_override_fonts/font = ExtResource("4_i6g32")
 theme_override_font_sizes/font_size = 39
 text = "Recycle Bin"
 
-[node name="notepadIcon" type="TextureButton" parent="gameController/desktop"]
+[node name="notepadIcon" type="TextureButton" parent="gameController/desktop" unique_id=732822140]
 texture_filter = 1
+layout_mode = 0
 offset_left = 85.0
 offset_top = 383.0
 offset_right = 216.0
@@ -99,8 +103,9 @@ offset_bottom = 484.0
 texture_normal = ExtResource("6_i6g32")
 ignore_texture_size = true
 stretch_mode = 4
+script = ExtResource("7_1l0tm")
 
-[node name="notepadText" type="Label" parent="gameController/desktop/notepadIcon"]
+[node name="notepadText" type="Label" parent="gameController/desktop/notepadIcon" unique_id=2022870174]
 layout_mode = 0
 offset_left = -9.0
 offset_top = 87.0
@@ -110,3 +115,19 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_i6g32")
 theme_override_font_sizes/font_size = 39
 text = "Notepad"
+
+[node name="NotepadPage" type="Sprite2D" parent="gameController/desktop/notepadIcon" unique_id=1309819439]
+unique_name_in_owner = true
+visible = false
+position = Vector2(497, -103.99997)
+scale = Vector2(0.54, 0.5786667)
+texture = ExtResource("8_v158k")
+
+[node name="Night1Text" type="Sprite2D" parent="gameController/desktop" unique_id=924306424]
+unique_name_in_owner = true
+visible = false
+position = Vector2(536.00006, 301)
+scale = Vector2(0.4370786, 0.44407895)
+texture = ExtResource("9_h4fw4")
+
+[connection signal="pressed" from="gameController/desktop/notepadIcon" to="gameController/desktop/notepadIcon" method="_on_pressed"]

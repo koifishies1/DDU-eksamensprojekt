@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ehtomufjkmd0"
-path="res://.godot/imported/taskbar.png-612676f162a425206acd18d4521aad04.ctex"
+uid="uid://u7p5163euqt8"
+path="res://.godot/imported/Night1Text.png-ff4bf876118e88317c33fe94f5865e00.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/taskbar.png"
-dest_files=["res://.godot/imported/taskbar.png-612676f162a425206acd18d4521aad04.ctex"]
+source_file="res://Assets/Night1Text.png"
+dest_files=["res://.godot/imported/Night1Text.png-ff4bf876118e88317c33fe94f5865e00.ctex"]
 
 [params]
 
