@@ -1,0 +1,112 @@
+[gd_scene load_steps=7 format=3 uid="uid://cynoo5q456jj4"]
+
+[ext_resource type="Texture2D" uid="uid://d38lyiohwmgf" path="res://Assets/background.png" id="1_ebmjs"]
+[ext_resource type="Texture2D" uid="uid://ehtomufjkmd0" path="res://Assets/taskbar.png" id="2_3dryh"]
+[ext_resource type="Texture2D" uid="uid://dxac8c06knmni" path="res://Assets/mail.png" id="3_wowpa"]
+[ext_resource type="FontFile" uid="uid://dqgpol2ay6t8e" path="res://Assets/ByteBounce.ttf" id="4_i6g32"]
+[ext_resource type="Texture2D" uid="uid://belkis7fq6m52" path="res://Assets/trash.png" id="5_wowpa"]
+[ext_resource type="Texture2D" uid="uid://g0yxwmifqj0y" path="res://Assets/notepad.png" id="6_i6g32"]
+
+[node name="Game" type="Node2D"]
+
+[node name="gameController" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="background" type="TextureRect" parent="gameController"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1111.0
+offset_bottom = 604.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ebmjs")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TextureRect" type="TextureRect" parent="gameController/background"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -1.0
+offset_top = 599.0
+offset_right = 1305.0
+offset_bottom = 646.0
+texture = ExtResource("2_3dryh")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="desktop" type="Control" parent="gameController"]
+layout_mode = 1
+anchor_right = 28.8
+anchor_bottom = 16.1
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="mailIcon" type="TextureButton" parent="gameController/desktop"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 81.0
+offset_top = 101.0
+offset_right = 169.0
+offset_bottom = 180.0
+texture_normal = ExtResource("3_wowpa")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="mailText" type="Label" parent="gameController/desktop/mailIcon"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 80.0
+offset_right = 78.0
+offset_bottom = 110.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_i6g32")
+theme_override_font_sizes/font_size = 39
+text = "Mail"
+
+[node name="recyclebinIcon" type="TextureButton" parent="gameController/desktop"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 72.0
+offset_top = 234.0
+offset_right = 192.0
+offset_bottom = 330.0
+texture_normal = ExtResource("5_wowpa")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="recyclebinText" type="Label" parent="gameController/desktop/recyclebinIcon"]
+layout_mode = 0
+offset_left = -13.0
+offset_top = 86.0
+offset_right = 153.0
+offset_bottom = 116.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_i6g32")
+theme_override_font_sizes/font_size = 39
+text = "Recycle Bin"
+
+[node name="notepadIcon" type="TextureButton" parent="gameController/desktop"]
+texture_filter = 1
+offset_left = 85.0
+offset_top = 383.0
+offset_right = 216.0
+offset_bottom = 484.0
+texture_normal = ExtResource("6_i6g32")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="notepadText" type="Label" parent="gameController/desktop/notepadIcon"]
+layout_mode = 0
+offset_left = -9.0
+offset_top = 87.0
+offset_right = 106.0
+offset_bottom = 117.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_i6g32")
+theme_override_font_sizes/font_size = 39
+text = "Notepad"
