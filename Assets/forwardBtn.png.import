@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7eqkdl1w4m7s"
-path="res://.godot/imported/notepad.png-50b27ae22a7cee8ad404c30de764e148.ctex"
+uid="uid://deuivwnlfduop"
+path="res://.godot/imported/forwardBtn.png-76f4b087a1ca98921389835985cbd0d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/notepad.png"
-dest_files=["res://.godot/imported/notepad.png-50b27ae22a7cee8ad404c30de764e148.ctex"]
+source_file="res://Assets/forwardBtn.png"
+dest_files=["res://.godot/imported/forwardBtn.png-76f4b087a1ca98921389835985cbd0d9.ctex"]
 
 [params]
 

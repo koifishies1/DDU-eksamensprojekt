@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7eqkdl1w4m7s"
-path="res://.godot/imported/notepad.png-50b27ae22a7cee8ad404c30de764e148.ctex"
+uid="uid://dh74saaw0axvk"
+path="res://.godot/imported/maximizeButton.png-8b605d0f71b79960d76bf349291c25f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/notepad.png"
-dest_files=["res://.godot/imported/notepad.png-50b27ae22a7cee8ad404c30de764e148.ctex"]
+source_file="res://Assets/maximizeButton.png"
+dest_files=["res://.godot/imported/maximizeButton.png-8b605d0f71b79960d76bf349291c25f6.ctex"]
 
 [params]
 

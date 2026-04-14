@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7eqkdl1w4m7s"
-path="res://.godot/imported/notepad.png-50b27ae22a7cee8ad404c30de764e148.ctex"
+uid="uid://dht68jpdqddwf"
+path="res://.godot/imported/tilemapNote.png-2552937d555157187fe43ab383156694.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/notepad.png"
-dest_files=["res://.godot/imported/notepad.png-50b27ae22a7cee8ad404c30de764e148.ctex"]
+source_file="res://Assets/tilemapNote.png"
+dest_files=["res://.godot/imported/tilemapNote.png-2552937d555157187fe43ab383156694.ctex"]
 
 [params]
 

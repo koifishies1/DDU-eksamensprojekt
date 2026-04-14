@@ -3,12 +3,44 @@
 [ext_resource type="Texture2D" uid="uid://d38lyiohwmgf" path="res://Assets/background.png" id="1_ebmjs"]
 [ext_resource type="Texture2D" uid="uid://ehtomufjkmd0" path="res://Assets/taskbar.png" id="2_3dryh"]
 [ext_resource type="Texture2D" uid="uid://dxac8c06knmni" path="res://Assets/mail.png" id="3_wowpa"]
+[ext_resource type="Script" uid="uid://cfiiesa0w7oap" path="res://Scripts/mail_icon.gd" id="4_7t8sx"]
 [ext_resource type="FontFile" uid="uid://dqgpol2ay6t8e" path="res://Assets/ByteBounce.ttf" id="4_i6g32"]
 [ext_resource type="Texture2D" uid="uid://belkis7fq6m52" path="res://Assets/trash.png" id="5_wowpa"]
-[ext_resource type="Texture2D" uid="uid://g0yxwmifqj0y" path="res://Assets/notepad.png" id="6_i6g32"]
-[ext_resource type="Script" uid="uid://du0kvtaq6m1dl" path="res://Scenes/notepad.gd" id="7_1l0tm"]
+[ext_resource type="Texture2D" uid="uid://7eqkdl1w4m7s" path="res://Assets/notepad.png" id="6_i6g32"]
+[ext_resource type="Texture2D" uid="uid://djlva55lrdx7t" path="res://Assets/mailBackground.png" id="6_mg4q0"]
+[ext_resource type="Script" uid="uid://du0kvtaq6m1dl" path="res://Scripts/notepadIcon.gd" id="7_1l0tm"]
+[ext_resource type="Texture2D" uid="uid://b7tvqby8rxhin" path="res://Assets/deleteBtn.png" id="7_vm72l"]
+[ext_resource type="Texture2D" uid="uid://deuivwnlfduop" path="res://Assets/forwardBtn.png" id="8_22asu"]
 [ext_resource type="Texture2D" uid="uid://jsdtb5bqdeo" path="res://Assets/NotepadPage.png" id="8_v158k"]
+[ext_resource type="Texture2D" uid="uid://c5lyctgxqs8v4" path="res://Assets/closeButton.png" id="9_fkdbe"]
 [ext_resource type="Texture2D" uid="uid://u7p5163euqt8" path="res://Assets/Night1Text.png" id="9_h4fw4"]
+[ext_resource type="Script" uid="uid://cghqgtncf2iue" path="res://Scripts/moveWindow.gd" id="9_rku1e"]
+[ext_resource type="Texture2D" uid="uid://bv2d0x602trlk" path="res://Assets/hoved_closebutton.png" id="11_rfjv2"]
+[ext_resource type="Script" uid="uid://rxkh4fm23j0s" path="res://Scripts/close_button.gd" id="11_rku1e"]
+[ext_resource type="Texture2D" uid="uid://cb3id1pqhd40j" path="res://Assets/test.png" id="13_7t8sx"]
+[ext_resource type="Texture2D" uid="uid://cpech2udp2kxd" path="res://Assets/cursor.png" id="13_nb51f"]
+[ext_resource type="Script" uid="uid://dqlahgwesxu70" path="res://Scripts/cursor.gd" id="14_nnt18"]
+[ext_resource type="Texture2D" uid="uid://dfax6udaoqysq" path="res://Assets/cursorClick.png" id="15_ewbju"]
+[ext_resource type="Texture2D" uid="uid://dht68jpdqddwf" path="res://Assets/tilemapNote.png" id="16_nnt18"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ewbju"]
+texture = ExtResource("16_nnt18")
+texture_region_size = Vector2i(21, 23)
+2:1/0 = 0
+2:0/0 = 0
+1:0/0 = 0
+1:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:2/0 = 0
+0:1/0 = 0
+0:0/0 = 0
+1:3/0 = 0
+0:3/0 = 0
+2:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_85qyi"]
+sources/0 = SubResource("TileSetAtlasSource_ewbju")
 
 [node name="Game" type="Node2D" unique_id=1271823493]
 
@@ -59,8 +91,9 @@ offset_bottom = 180.0
 texture_normal = ExtResource("3_wowpa")
 ignore_texture_size = true
 stretch_mode = 4
+script = ExtResource("4_7t8sx")
 
-[node name="mailText" type="Label" parent="gameController/desktop/mailIcon" unique_id=1660962320]
+[node name="mailName" type="Label" parent="gameController/desktop/mailIcon" unique_id=1660962320]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 80.0
@@ -70,6 +103,67 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_i6g32")
 theme_override_font_sizes/font_size = 39
 text = "Mail"
+
+[node name="mail" type="Control" parent="gameController/desktop/mailIcon" unique_id=150843514]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="mailBackground" type="TextureRect" parent="gameController/desktop/mailIcon/mail" unique_id=1141056544 node_paths=PackedStringArray("window_root")]
+layout_mode = 0
+offset_left = 238.0
+offset_top = -79.0
+offset_right = 958.0
+offset_bottom = 472.0
+texture = ExtResource("6_mg4q0")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("9_rku1e")
+window_root = NodePath("..")
+
+[node name="deleteBtn" type="TextureButton" parent="gameController/desktop/mailIcon/mail/mailBackground" unique_id=1822455404]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 457.0
+offset_right = 400.0
+offset_bottom = 546.0
+texture_normal = ExtResource("7_vm72l")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="forwardBtn" type="TextureButton" parent="gameController/desktop/mailIcon/mail/mailBackground" unique_id=628493475]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 480.0
+offset_right = 796.0
+offset_bottom = 523.0
+texture_normal = ExtResource("8_22asu")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="closeBtn" type="TextureButton" parent="gameController/desktop/mailIcon/mail/mailBackground" unique_id=355441208 node_paths=PackedStringArray("windowBackground")]
+layout_mode = 0
+offset_left = 636.0
+offset_top = 28.0
+offset_right = 681.0
+offset_bottom = 66.0
+texture_normal = ExtResource("9_fkdbe")
+texture_hover = ExtResource("11_rfjv2")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("11_rku1e")
+windowBackground = NodePath("../..")
+
+[node name="texttest" type="TextureRect" parent="gameController/desktop/mailIcon/mail/mailBackground" unique_id=24487753]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 140.0
+offset_right = 213.0
+offset_bottom = 222.0
+texture = ExtResource("13_7t8sx")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="recyclebinIcon" type="TextureButton" parent="gameController/desktop" unique_id=368672978]
 texture_filter = 1
@@ -82,7 +176,7 @@ texture_normal = ExtResource("5_wowpa")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="recyclebinText" type="Label" parent="gameController/desktop/recyclebinIcon" unique_id=616546795]
+[node name="recyclebinName" type="Label" parent="gameController/desktop/recyclebinIcon" unique_id=616546795]
 layout_mode = 0
 offset_left = -13.0
 offset_top = 86.0
@@ -105,7 +199,7 @@ ignore_texture_size = true
 stretch_mode = 4
 script = ExtResource("7_1l0tm")
 
-[node name="notepadText" type="Label" parent="gameController/desktop/notepadIcon" unique_id=2022870174]
+[node name="notepadName" type="Label" parent="gameController/desktop/notepadIcon" unique_id=2022870174]
 layout_mode = 0
 offset_left = -9.0
 offset_top = 87.0
@@ -116,18 +210,65 @@ theme_override_fonts/font = ExtResource("4_i6g32")
 theme_override_font_sizes/font_size = 39
 text = "Notepad"
 
-[node name="NotepadPage" type="Sprite2D" parent="gameController/desktop/notepadIcon" unique_id=1309819439]
+[node name="notepad" type="Control" parent="gameController/desktop/notepadIcon" unique_id=761048965]
 unique_name_in_owner = true
 visible = false
-position = Vector2(497, -103.99997)
-scale = Vector2(0.54, 0.5786667)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="background" type="TextureRect" parent="gameController/desktop/notepadIcon/notepad" unique_id=1517962378 node_paths=PackedStringArray("window_root")]
+layout_mode = 0
+offset_left = 192.0
+offset_top = -320.0
+offset_right = 706.0
+offset_bottom = 32.0
 texture = ExtResource("8_v158k")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("9_rku1e")
+window_root = NodePath("..")
+drag_zone_height = 60.0
 
-[node name="Night1Text" type="Sprite2D" parent="gameController/desktop" unique_id=924306424]
-unique_name_in_owner = true
-visible = false
-position = Vector2(536.00006, 301)
-scale = Vector2(0.4370786, 0.44407895)
+[node name="notepadText" type="TextureRect" parent="gameController/desktop/notepadIcon/notepad" unique_id=533562791]
+layout_mode = 0
+offset_left = 192.0
+offset_top = -308.0
+offset_right = 617.0
+offset_bottom = 58.0
+mouse_filter = 2
 texture = ExtResource("9_h4fw4")
+expand_mode = 1
+stretch_mode = 4
 
+[node name="closeButton" type="TextureButton" parent="gameController/desktop/notepadIcon/notepad" unique_id=509847478 node_paths=PackedStringArray("windowBackground")]
+layout_mode = 0
+offset_left = 639.0
+offset_top = -307.0
+offset_right = 687.0
+offset_bottom = -268.0
+texture_normal = ExtResource("9_fkdbe")
+texture_hover = ExtResource("11_rfjv2")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("11_rku1e")
+windowBackground = NodePath("..")
+
+[node name="cursor" type="TextureRect" parent="." unique_id=773512152]
+offset_left = -195.0
+offset_top = 255.0
+offset_right = -109.0
+offset_bottom = 338.0
+texture = ExtResource("13_nb51f")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("14_nnt18")
+normal_texture = ExtResource("13_nb51f")
+click_texture = ExtResource("15_ewbju")
+hotspot = Vector2(35, 15)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=174590262]
+tile_set = SubResource("TileSet_85qyi")
+
+[connection signal="pressed" from="gameController/desktop/mailIcon" to="gameController/desktop/mailIcon" method="_on_pressed"]
 [connection signal="pressed" from="gameController/desktop/notepadIcon" to="gameController/desktop/notepadIcon" method="_on_pressed"]

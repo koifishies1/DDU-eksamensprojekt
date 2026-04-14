@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7eqkdl1w4m7s"
-path="res://.godot/imported/notepad.png-50b27ae22a7cee8ad404c30de764e148.ctex"
+uid="uid://bv2d0x602trlk"
+path="res://.godot/imported/hoved_closebutton.png-f3349e6a6cc3facf1da22a171d10475b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/notepad.png"
-dest_files=["res://.godot/imported/notepad.png-50b27ae22a7cee8ad404c30de764e148.ctex"]
+source_file="res://Assets/hoved_closebutton.png"
+dest_files=["res://.godot/imported/hoved_closebutton.png-f3349e6a6cc3facf1da22a171d10475b.ctex"]
 
 [params]
 

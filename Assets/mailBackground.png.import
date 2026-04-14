@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7eqkdl1w4m7s"
-path="res://.godot/imported/notepad.png-50b27ae22a7cee8ad404c30de764e148.ctex"
+uid="uid://djlva55lrdx7t"
+path="res://.godot/imported/mailBackground.png-649f62b44a0749617673a494dff33b17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/notepad.png"
-dest_files=["res://.godot/imported/notepad.png-50b27ae22a7cee8ad404c30de764e148.ctex"]
+source_file="res://Assets/mailBackground.png"
+dest_files=["res://.godot/imported/mailBackground.png-649f62b44a0749617673a494dff33b17.ctex"]
 
 [params]
 
