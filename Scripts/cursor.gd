@@ -6,6 +6,9 @@ extends TextureRect
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	top_level = true
+	z_as_relative = false
+	z_index = 4096
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	texture = normal_texture
 

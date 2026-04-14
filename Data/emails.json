@@ -1,0 +1,56 @@
+[
+  {
+	"id": "legit_invoice_001",
+	"subject": "Invoice #22018 - Office Supplies",
+	"sender": "accounts@northline.com",
+	"body": "Please review and forward this invoice to accounting. Attachment uses standard PDF format.",
+	"type": "legit",
+	"disposition": "forward",
+	"conditions": {}
+  },
+  {
+	"id": "virus_password_reset_001",
+	"subject": "URGENT: Reset your password NOW",
+	"sender": "it-support@secure.biz",
+	"body": "Your account will be deleted in 5 minutes unless you click this link and enter your credentials.",
+	"type": "virus",
+	"disposition": "delete",
+	"conditions": {}
+  },
+  {
+	"id": "legit_meeting_001",
+	"subject": "Project meeting moved to 14:00",
+	"sender": "manager@company.dk",
+	"body": "Team meeting moved to 14:00 in meeting room B. Please forward to relevant staff.",
+	"type": "legit",
+	"disposition": "forward",
+	"conditions": {}
+  },
+  {
+	"id": "virus_attachment_001",
+	"subject": "Payment receipt attached",
+	"sender": "billing@fast-payouts.ru",
+	"body": "Open attached .exe to view payment details and claim your refund.",
+	"type": "virus",
+	"disposition": "delete",
+	"conditions": {}
+  },
+  {
+	"id": "legit_hr_001",
+	"subject": "Updated holiday policy",
+	"sender": "hr@company.dk",
+	"body": "Please forward the updated holiday policy to all employees before Friday.",
+	"type": "legit",
+	"disposition": "forward",
+	"conditions": {}
+  },
+  {
+	"id": "virus_crypto_001",
+	"subject": "Claim free crypto airdrop",
+	"sender": "promo@coin-rewards.top",
+	"body": "Verify with your recovery phrase to unlock your reward.",
+	"type": "virus",
+	"disposition": "delete",
+	"conditions": {}
+  }
+]
