@@ -111,6 +111,7 @@ text = "Mail"
 
 [node name="mail" type="Control" parent="gameController/desktop/mailIcon" unique_id=150843514]
 unique_name_in_owner = true
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -358,7 +359,7 @@ stretch_mode = 4
 tile_set = SubResource("TileSet_85qyi")
 
 [node name="cursor" type="TextureRect" parent="TileMapLayer" unique_id=773512152]
-z_index = -13
+z_index = 3
 offset_left = -195.0
 offset_top = 255.0
 offset_right = -109.0

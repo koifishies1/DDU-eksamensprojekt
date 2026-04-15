@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://x6lxmbdutkmm"]
 
-[ext_resource type="Script" uid="uid://y0kgam3tm66q" path="res://Scenes/lyd.gd" id="1_3etfd"]
+[ext_resource type="Script" uid="uid://y0kgam3tm66q" path="res://Scripts/lyd.gd" id="1_3etfd"]
 [ext_resource type="Script" uid="uid://c8jqpeyqqkqng" path="res://Scripts/settings_menu.gd" id="1_icv2g"]
 [ext_resource type="Texture2D" uid="uid://dju4bruaotdnf" path="res://Assets/main_menu_background.png" id="2_7y5a0"]
 [ext_resource type="Texture2D" uid="uid://bwrseclusj2qm" path="res://Assets/settings_menu.png" id="2_8ef0u"]
 [ext_resource type="Texture2D" uid="uid://bv2d0x602trlk" path="res://Assets/hoved_closebutton.png" id="4_h2y1r"]
 [ext_resource type="AudioStream" uid="uid://dgly1d8i83u1e" path="res://Assets/Five Nights at Freddy's 2 Song - The Living Tombstone (FNAF2).mp3" id="5_rahb6"]
+[ext_resource type="Texture2D" uid="uid://cpech2udp2kxd" path="res://Assets/cursor.png" id="7_fsgis"]
+[ext_resource type="Script" uid="uid://dqlahgwesxu70" path="res://Scripts/cursor.gd" id="8_vv31b"]
+[ext_resource type="Texture2D" uid="uid://dfax6udaoqysq" path="res://Assets/cursorClick.png" id="9_hmele"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7y5a0"]
 load_path = "res://.godot/imported/closeButton.png-0e8e3bdef423ac02a6104719c9a6d00e.ctex"
@@ -95,6 +98,21 @@ offset_top = 436.0
 offset_right = 702.0
 offset_bottom = 470.0
 text = "Confirm"
+
+[node name="cursor" type="TextureRect" parent="." unique_id=1334413768]
+z_index = 2
+z_as_relative = false
+offset_left = -155.0
+offset_top = 295.0
+offset_right = -69.0
+offset_bottom = 378.0
+texture = ExtResource("7_fsgis")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("8_vv31b")
+normal_texture = ExtResource("7_fsgis")
+click_texture = ExtResource("9_hmele")
+hotspot = Vector2(35, 15)
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="focus_exited" from="AudioOptions/VBoxContainer/MasterSlider" to="." method="_on_master_slider_focus_exited"]

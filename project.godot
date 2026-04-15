@@ -26,6 +26,7 @@ buses/default_bus_layout="uid://dn7fl42cau6f"
 [autoload]
 
 MailManager="res://Scripts/MailManager.gd"
+BootupAudio="res://Scripts/bootup_audio.gd"
 
 [physics]
 
