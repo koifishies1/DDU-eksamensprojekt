@@ -1,20 +1,59 @@
 [gd_scene format=3 uid="uid://bq8di6i5mxy2o"]
 
-[ext_resource type="Script" uid="uid://blholam62j432" path="res://Scripts/button.gd" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://dju4bruaotdnf" path="res://Assets/main_menu_background.png" id="1_1ehe0"]
+[ext_resource type="Script" uid="uid://blholam62j432" path="res://Scripts/Main_Menu_Buttons.gd" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://x2p1yl87t666" path="res://Assets/curtains_with_name.png" id="3_opfnp"]
+[ext_resource type="Texture2D" uid="uid://cpuwvqo7sdoxy" path="res://Assets/Start_knap.png" id="4_cp0ys"]
+[ext_resource type="Texture2D" uid="uid://d3uoopou1tlhd" path="res://Assets/Settings_knap.png" id="5_yhxw7"]
+[ext_resource type="Texture2D" uid="uid://s40nt0pb0j7r" path="res://Assets/Exit_knap.png" id="6_trj04"]
 
 [node name="MainMenu" type="Node2D" unique_id=1011265623]
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1765083118]
-offset_right = 1150.0
-offset_bottom = 648.0
-color = Color(1, 0, 1, 1)
-
-[node name="Button" type="Button" parent="." unique_id=1975402563]
-offset_left = 454.0
-offset_top = 260.0
-offset_right = 694.0
-offset_bottom = 328.0
-text = "start"
 script = ExtResource("1_28flt")
 
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[node name="MainMenuBackground" type="Sprite2D" parent="." unique_id=1909579800]
+position = Vector2(585, 329)
+scale = Vector2(0.8221428, 0.9747024)
+texture = ExtResource("1_1ehe0")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1458993807]
+offset_left = 630.0
+offset_top = -53.0
+offset_right = 632.0
+offset_bottom = 663.0
+color = Color(1, 1, 1, 0.22745098)
+
+[node name="CurtainsWithName" type="Sprite2D" parent="." unique_id=256979293]
+position = Vector2(512, 253.00002)
+scale = Vector2(0.37214282, 0.35306117)
+texture = ExtResource("3_opfnp")
+
+[node name="StartKnap" type="TextureButton" parent="." unique_id=63015222]
+offset_left = 652.0
+offset_top = 211.0
+offset_right = 737.0
+offset_bottom = 270.0
+texture_normal = ExtResource("4_cp0ys")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="SettingsKnap" type="TextureButton" parent="." unique_id=577918404]
+offset_left = 652.0
+offset_top = 267.0
+offset_right = 737.0
+offset_bottom = 297.0
+texture_normal = ExtResource("5_yhxw7")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="ExitKnap" type="TextureButton" parent="." unique_id=1896565816]
+offset_left = 652.0
+offset_top = 299.0
+offset_right = 737.0
+offset_bottom = 354.0
+texture_normal = ExtResource("6_trj04")
+ignore_texture_size = true
+stretch_mode = 4
+
+[connection signal="pressed" from="StartKnap" to="." method="_on_start_knap_pressed"]
+[connection signal="pressed" from="SettingsKnap" to="." method="_on_settings_knap_pressed"]
+[connection signal="pressed" from="ExitKnap" to="." method="_on_exit_knap_pressed"]

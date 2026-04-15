@@ -19,6 +19,10 @@ run/main_scene="uid://bq8di6i5mxy2o"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://dn7fl42cau6f"
+
 [autoload]
 
 MailManager="res://Scripts/MailManager.gd"

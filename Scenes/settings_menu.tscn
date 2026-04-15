@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://x6lxmbdutkmm"]
+
+[ext_resource type="Script" uid="uid://y0kgam3tm66q" path="res://Scenes/lyd.gd" id="1_3etfd"]
+[ext_resource type="Script" uid="uid://c8jqpeyqqkqng" path="res://Scripts/settings_menu.gd" id="1_icv2g"]
+[ext_resource type="Texture2D" uid="uid://dju4bruaotdnf" path="res://Assets/main_menu_background.png" id="2_7y5a0"]
+[ext_resource type="Texture2D" uid="uid://bwrseclusj2qm" path="res://Assets/settings_menu.png" id="2_8ef0u"]
+[ext_resource type="Texture2D" uid="uid://bv2d0x602trlk" path="res://Assets/hoved_closebutton.png" id="4_h2y1r"]
+[ext_resource type="AudioStream" uid="uid://dgly1d8i83u1e" path="res://Assets/Five Nights at Freddy's 2 Song - The Living Tombstone (FNAF2).mp3" id="5_rahb6"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7y5a0"]
+load_path = "res://.godot/imported/closeButton.png-0e8e3bdef423ac02a6104719c9a6d00e.ctex"
+
+[node name="SettingsMenu" type="Node2D" unique_id=960216162]
+script = ExtResource("1_icv2g")
+
+[node name="MainMenuBackground" type="Sprite2D" parent="." unique_id=966440937]
+position = Vector2(576.25006, 324)
+scale = Vector2(0.82392853, 0.96428573)
+texture = ExtResource("2_7y5a0")
+
+[node name="SettingsMenu" type="Sprite2D" parent="." unique_id=351566828]
+position = Vector2(554, 322)
+scale = Vector2(0.38258886, 0.36820763)
+texture = ExtResource("2_8ef0u")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=2020816614]
+offset_left = 670.0
+offset_top = 111.0
+offset_right = 706.0
+offset_bottom = 142.0
+texture_normal = SubResource("CompressedTexture2D_7y5a0")
+texture_hover = ExtResource("4_h2y1r")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="AudioOptions" type="Control" parent="." unique_id=1148061771]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_3etfd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AudioOptions" unique_id=487121423]
+layout_mode = 0
+offset_left = 471.0
+offset_top = 238.0
+offset_right = 652.0
+offset_bottom = 391.0
+
+[node name="MasterLabel" type="Label" parent="AudioOptions/VBoxContainer" unique_id=622999634]
+layout_mode = 2
+text = "Master "
+
+[node name="MasterSlider" type="HSlider" parent="AudioOptions/VBoxContainer" unique_id=661456032]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+
+[node name="MusicLabel" type="Label" parent="AudioOptions/VBoxContainer" unique_id=1242533186]
+layout_mode = 2
+text = "Music"
+
+[node name="MusicSlider" type="HSlider" parent="AudioOptions/VBoxContainer" unique_id=1447773476]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+
+[node name="AmbienceLabel" type="Label" parent="AudioOptions/VBoxContainer" unique_id=1771429119]
+layout_mode = 2
+text = "Ambience"
+
+[node name="AmbienceSlider" type="HSlider" parent="AudioOptions/VBoxContainer" unique_id=2131508846]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+
+[node name="SFXLabel" type="Label" parent="AudioOptions/VBoxContainer" unique_id=279464195]
+layout_mode = 2
+text = "SFX"
+
+[node name="SFXSlider" type="HSlider" parent="AudioOptions/VBoxContainer" unique_id=137654827]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+
+[node name="FNAF" type="AudioStreamPlayer" parent="AudioOptions" unique_id=92784839]
+unique_name_in_owner = true
+stream = ExtResource("5_rahb6")
+bus = &"Music"
+
+[node name="Button" type="Button" parent="AudioOptions" unique_id=1848378760]
+layout_mode = 0
+offset_left = 631.0
+offset_top = 436.0
+offset_right = 702.0
+offset_bottom = 470.0
+text = "Confirm"
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="focus_exited" from="AudioOptions/VBoxContainer/MasterSlider" to="." method="_on_master_slider_focus_exited"]
+[connection signal="focus_exited" from="AudioOptions/VBoxContainer/MusicSlider" to="." method="_on_music_slider_focus_exited"]
+[connection signal="focus_exited" from="AudioOptions/VBoxContainer/AmbienceSlider" to="." method="_on_ambience_slider_focus_exited"]
+[connection signal="focus_exited" from="AudioOptions/VBoxContainer/SFXSlider" to="." method="_on_sfx_slider_focus_exited"]
+[connection signal="pressed" from="AudioOptions/Button" to="." method="_on_button_pressed"]
