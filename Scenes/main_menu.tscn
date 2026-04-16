@@ -9,7 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://c25rvdbdir7tr" path="res://Assets/Title.png" id="7_vr1f0"]
 [ext_resource type="Texture2D" uid="uid://cpech2udp2kxd" path="res://Assets/cursor.png" id="8_t1dhk"]
 [ext_resource type="Script" uid="uid://dqlahgwesxu70" path="res://Scripts/cursor.gd" id="9_5egv6"]
-[ext_resource type="Texture2D" uid="uid://dfax6udaoqysq" path="res://Assets/cursorClick.png" id="10_vtepg"]
+[ext_resource type="Texture2D" uid="uid://dfax6udaoqysq" path="res://Assets/cursorClick.png" id="10_vr1f0"]
+[ext_resource type="AudioStream" uid="uid://dbf5pjaqoq0cd" path="res://Assets/sounds/mouseclick.mp3" id="11_vr1f0"]
 
 [node name="MainMenu" type="Node2D" unique_id=1011265623]
 script = ExtResource("1_28flt")
@@ -101,8 +102,11 @@ expand_mode = 1
 stretch_mode = 5
 script = ExtResource("9_5egv6")
 normal_texture = ExtResource("8_t1dhk")
-click_texture = ExtResource("10_vtepg")
-hotspot = Vector2(35, 15)
+click_texture = ExtResource("10_vr1f0")
+
+[node name="Mouseclick" type="AudioStreamPlayer" parent="." unique_id=113255707]
+unique_name_in_owner = true
+stream = ExtResource("11_vr1f0")
 
 [connection signal="pressed" from="MainMenuBackground/buttons/StartKnap" to="." method="_on_start_knap_pressed"]
 [connection signal="pressed" from="MainMenuBackground/buttons/SettingsKnap" to="." method="_on_settings_knap_pressed"]

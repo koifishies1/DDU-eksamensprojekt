@@ -1,18 +1,19 @@
 [gd_scene format=3 uid="uid://brxoghaa3jq32"]
 
-[ext_resource type="Script" path="res://Scripts/cinematic.gd" id="1_a3n2k"]
-[ext_resource type="Texture2D" uid="uid://dju4bruaotdnf" path="res://Assets/main_menu_background.png" id="1_s1mj2"]
-[ext_resource type="Texture2D" uid="uid://b0op1s3n7h21t" path="res://Assets/curtains.png" id="2_a3n2k"]
-[ext_resource type="Texture2D" uid="uid://c25rvdbdir7tr" path="res://Assets/Title.png" id="3_d5qco"]
-[ext_resource type="Texture2D" uid="uid://cpuwvqo7sdoxy" path="res://Assets/Start_knap.png" id="4_l3iew"]
-[ext_resource type="Texture2D" uid="uid://d3uoopou1tlhd" path="res://Assets/Settings_knap.png" id="5_gmeu3"]
-[ext_resource type="Texture2D" uid="uid://s40nt0pb0j7r" path="res://Assets/Exit_knap.png" id="6_rtcuv"]
-[ext_resource type="Texture2D" uid="uid://cpech2udp2kxd" path="res://Assets/cursor.png" id="7_6evrf"]
+[ext_resource type="Script" uid="uid://b2nlwpr4w5dd3" path="res://Scripts/cinematic.gd" id="1_a3n2k"]
+[ext_resource type="Texture2D" path="res://Assets/main_menu_background.png" id="1_s1mj2"]
+[ext_resource type="Texture2D" path="res://Assets/curtains.png" id="2_a3n2k"]
+[ext_resource type="Texture2D" path="res://Assets/Title.png" id="3_d5qco"]
+[ext_resource type="Texture2D" path="res://Assets/Start_knap.png" id="4_l3iew"]
+[ext_resource type="Texture2D" path="res://Assets/Settings_knap.png" id="5_gmeu3"]
+[ext_resource type="Texture2D" path="res://Assets/Exit_knap.png" id="6_rtcuv"]
+[ext_resource type="Texture2D" path="res://Assets/cursor.png" id="7_6evrf"]
 [ext_resource type="Script" uid="uid://dqlahgwesxu70" path="res://Scripts/cursor.gd" id="8_en51e"]
-[ext_resource type="Texture2D" uid="uid://dfax6udaoqysq" path="res://Assets/cursorClick.png" id="9_wo4nw"]
-[ext_resource type="Texture2D" uid="uid://l02avb72vtbi" path="res://Assets/LogInAnimation.png" id="10_3c0om"]
+[ext_resource type="Texture2D" path="res://Assets/cursorClick.png" id="9_wo4nw"]
+[ext_resource type="Texture2D" path="res://Assets/LogInAnimation.png" id="10_3c0om"]
 [ext_resource type="AudioStream" uid="uid://cpnyo1q7dp6a8" path="res://Assets/sounds/keyboard.mp3" id="12_l3iew"]
 [ext_resource type="AudioStream" uid="uid://d1hi4x7w6cwer" path="res://Assets/sounds/bootup.mp3" id="13_gmeu3"]
+[ext_resource type="AudioStream" uid="uid://dbf5pjaqoq0cd" path="res://Assets/sounds/mouseclick.mp3" id="14_gmeu3"]
 
 [sub_resource type="Animation" id="Animation_7yw3k"]
 length = 0.001
@@ -331,3 +332,7 @@ stream = ExtResource("12_l3iew")
 
 [node name="BootupSound" type="AudioStreamPlayer" parent="." unique_id=687360013]
 stream = ExtResource("13_gmeu3")
+
+[node name="Mouseclick" type="AudioStreamPlayer" parent="." unique_id=1845870579]
+unique_name_in_owner = true
+stream = ExtResource("14_gmeu3")

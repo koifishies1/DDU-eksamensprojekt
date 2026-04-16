@@ -19,3 +19,6 @@ func _process(_delta: float) -> void:
 		texture = click_texture
 	else:
 		texture = normal_texture
+
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		%Mouseclick.play()
