@@ -1,98 +1,12 @@
 [gd_scene format=3 uid="uid://d4r1ghxvteu0"]
 
-[ext_resource type="Texture2D" uid="uid://dju4bruaotdnf" path="res://Assets/main_menu_background.png" id="1_em7vc"]
-[ext_resource type="Texture2D" uid="uid://b0op1s3n7h21t" path="res://Assets/curtains.png" id="2_4suit"]
-[ext_resource type="Texture2D" uid="uid://c25rvdbdir7tr" path="res://Assets/Title.png" id="3_wqrt5"]
-[ext_resource type="Texture2D" uid="uid://cpech2udp2kxd" path="res://Assets/cursor.png" id="4_p36t0"]
-[ext_resource type="Texture2D" uid="uid://cw0vvhxwdi37h" path="res://Assets/stats.png" id="4_wqrt5"]
-[ext_resource type="FontFile" uid="uid://dqgpol2ay6t8e" path="res://Assets/ByteBounce.ttf" id="5_p36t0"]
-[ext_resource type="Script" uid="uid://dqlahgwesxu70" path="res://Scripts/cursor.gd" id="5_xhupi"]
-[ext_resource type="Texture2D" uid="uid://dfax6udaoqysq" path="res://Assets/cursorClick.png" id="6_yk4qk"]
-[ext_resource type="AudioStream" uid="uid://dbf5pjaqoq0cd" path="res://Assets/sounds/mouseclick.mp3" id="7_4wvcl"]
+[node name="LoseCinematic" type="Node2D" unique_id=133098545]
 
-[node name="end_screen" type="Node2D" unique_id=701563412]
-
-[node name="Background" type="TextureRect" parent="." unique_id=675733034]
-offset_right = 1151.0
-offset_bottom = 645.0
-texture = ExtResource("1_em7vc")
-expand_mode = 1
-metadata/_edit_lock_ = true
-
-[node name="logo" type="Control" parent="Background" unique_id=29051653]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="CurtainsLogo" type="TextureRect" parent="Background/logo" unique_id=278303168]
-layout_mode = 0
-offset_left = 137.0
-offset_top = 115.0
-offset_right = 311.0
-offset_bottom = 256.0
-texture = ExtResource("2_4suit")
-expand_mode = 1
-stretch_mode = 4
-
-[node name="Title" type="TextureRect" parent="Background/logo" unique_id=946504941]
-layout_mode = 0
-offset_left = 56.0
-offset_top = 299.0
-offset_right = 400.0
-offset_bottom = 337.0
-texture = ExtResource("3_wqrt5")
-expand_mode = 1
-stretch_mode = 4
-
-[node name="buttons" type="Control" parent="Background" unique_id=544318992]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="stats" type="TextureRect" parent="Background" unique_id=87539640]
-texture_filter = 1
-layout_mode = 0
-offset_left = 479.0
-offset_top = 181.0
-offset_right = 1031.0
-offset_bottom = 450.0
-texture = ExtResource("4_wqrt5")
-stretch_mode = 4
-
-[node name="EmailsCorrect" type="Label" parent="Background/stats" unique_id=2138054707]
-layout_mode = 0
-offset_left = 212.0
-offset_top = 106.0
-offset_right = 458.0
-offset_bottom = 143.0
-theme_override_fonts/font = ExtResource("5_p36t0")
-theme_override_font_sizes/font_size = 53
-text = "1"
-
-[node name="TimeSpent" type="Label" parent="Background/stats" unique_id=310073162]
-layout_mode = 0
-offset_left = 212.0
-offset_top = 189.0
-offset_right = 453.0
-offset_bottom = 226.0
-theme_override_fonts/font = ExtResource("5_p36t0")
-theme_override_font_sizes/font_size = 53
-text = "1"
-
-[node name="cursor" type="TextureRect" parent="." unique_id=342507868]
-z_index = 2
-z_as_relative = false
-offset_left = -155.0
-offset_top = 295.0
-offset_right = -69.0
-offset_bottom = 378.0
-texture = ExtResource("4_p36t0")
-expand_mode = 1
-stretch_mode = 5
-script = ExtResource("5_xhupi")
-normal_texture = ExtResource("4_p36t0")
-click_texture = ExtResource("6_yk4qk")
-
-[node name="Mouseclick" type="AudioStreamPlayer" parent="." unique_id=1929183328]
-unique_name_in_owner = true
-stream = ExtResource("7_4wvcl")
+[node name="Placeholder" type="Label" parent="." unique_id=1406514969]
+offset_left = 200.0
+offset_top = 280.0
+offset_right = 950.0
+offset_bottom = 360.0
+text = "Lose cinematic — replace this scene with your own."
+horizontal_alignment = 1
+vertical_alignment = 1

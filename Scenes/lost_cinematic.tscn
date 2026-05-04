@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://db2u3gp04qe2o"]
+
+[ext_resource type="Script" uid="uid://b2nlwpr4w5dd3" path="res://Scripts/cinematic.gd" id="1_k8cot"]
+[ext_resource type="Texture2D" uid="uid://lq67snowv6jt" path="res://Assets/loseScreen.png" id="2_pewjp"]
+[ext_resource type="FontFile" uid="uid://dqgpol2ay6t8e" path="res://Assets/ByteBounce.ttf" id="3_sckok"]
+[ext_resource type="Texture2D" uid="uid://cpech2udp2kxd" path="res://Assets/cursor.png" id="4_maaxr"]
+[ext_resource type="Script" uid="uid://dqlahgwesxu70" path="res://Scripts/cursor.gd" id="5_pwbpt"]
+[ext_resource type="Texture2D" uid="uid://dfax6udaoqysq" path="res://Assets/cursorClick.png" id="6_npaah"]
+[ext_resource type="AudioStream" uid="uid://cpnyo1q7dp6a8" path="res://Assets/sounds/keyboard.mp3" id="7_1q1qj"]
+[ext_resource type="AudioStream" uid="uid://d1hi4x7w6cwer" path="res://Assets/sounds/bootup.mp3" id="8_6rk6d"]
+[ext_resource type="AudioStream" uid="uid://dbf5pjaqoq0cd" path="res://Assets/sounds/mouseclick.mp3" id="9_h1dga"]
+
+[sub_resource type="Animation" id="Animation_g1wks"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(623, -419)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/TextureRect:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.19198622]
+}
+
+[sub_resource type="Animation" id="Animation_l4ah0"]
+resource_name = "falling"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.8333334, 2.1333334, 3.86, 4.2, 5.8, 6.17),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(623, -419), Vector2(486.71002, -319.88), Vector2(492.92258, -286.90967), Vector2(655.53656, -150.34552), Vector2(640.3684, -110.666626), Vector2(426.64215, 33.333313), Vector2(584, 58.000015)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/TextureRect:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.8333334, 2.1333334, 3.86, 4.2, 5.8, 6.1666665),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.19198622, 1.0576084, 1.1216837, 0.4534787, 0.4444329, 0.8821868, 0.95818573]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hwh2d"]
+_data = {
+&"RESET": SubResource("Animation_g1wks"),
+&"falling": SubResource("Animation_l4ah0")
+}
+
+[node name="LoseCinematic" type="Node2D" unique_id=1265242777]
+script = ExtResource("1_k8cot")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=348941250]
+offset_right = 1152.0
+offset_bottom = 644.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=1359646112]
+layout_mode = 0
+offset_left = 623.0
+offset_top = -419.0
+offset_right = 1237.9824
+offset_bottom = 92.99902
+rotation = -0.19198622
+texture = ExtResource("2_pewjp")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=2120394272]
+layout_mode = 0
+offset_left = 245.0
+offset_top = 72.0
+offset_right = 1015.0
+offset_bottom = 213.0
+theme_override_fonts/font = ExtResource("3_sckok")
+theme_override_font_sizes/font_size = 100
+text = "You got too many
+viruses and lost"
+
+[node name="cursor" type="TextureRect" parent="." unique_id=129957549]
+z_index = 2
+z_as_relative = false
+offset_left = -155.0
+offset_top = 295.0
+offset_right = -69.0
+offset_bottom = 378.0
+texture = ExtResource("4_maaxr")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("5_pwbpt")
+normal_texture = ExtResource("4_maaxr")
+click_texture = ExtResource("6_npaah")
+hotspot = Vector2(35, 15)
+
+[node name="KeyboardSound" type="AudioStreamPlayer" parent="." unique_id=76610659]
+stream = ExtResource("7_1q1qj")
+
+[node name="BootupSound" type="AudioStreamPlayer" parent="." unique_id=687360013]
+stream = ExtResource("8_6rk6d")
+
+[node name="Mouseclick" type="AudioStreamPlayer" parent="." unique_id=1845870579]
+unique_name_in_owner = true
+stream = ExtResource("9_h1dga")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=392593935]
+libraries/ = SubResource("AnimationLibrary_hwh2d")
