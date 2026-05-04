@@ -1,5 +1,7 @@
 extends Control
 
+signal request_virus_release
+
 @export var use_preview_data: bool = true
 @export var inbox_list_path: NodePath
 @export var subject_label_path: NodePath
@@ -9,6 +11,7 @@ extends Control
 @export var delete_button_path: NodePath = ^"mailBackground/deleteBtn"
 @export var logout_button_path: NodePath
 @export var permanent_disposal: bool = false
+@export var virus_controller_path: NodePath = ^"../../../Viruses"
 
 var _inbox_list: VBoxContainer
 var _subject_label: Label
@@ -27,6 +30,7 @@ var _session_seen_ids: Dictionary = {}
 
 func _ready() -> void:
 	_resolve_or_create_ui()
+	_wire_virus_controller()
 	_wire_buttons()
 
 	if not use_preview_data:
@@ -287,14 +291,17 @@ func _dispose_current_email(chosen_action: String) -> void:
 	var manager := get_node_or_null("/root/MailManager")
 	if not email_id.is_empty() and not permanent_disposal:
 		_session_hidden_ids[email_id] = true
-		var expected := str(email.get("disposition", "forward")).to_lower()
+		var expected := _get_expected_action(email)
 		if expected != "forward" and expected != "delete":
 			expected = "forward"
+		var is_correct := chosen_action == expected
 		_session_results[email_id] = {
 			"chosen_action": chosen_action,
 			"expected_action": expected,
-			"correct": chosen_action == expected
+			"correct": is_correct
 		}
+		if not is_correct:
+			request_virus_release.emit()
 		_visible_emails.remove_at(_current_index)
 		_rebuild_inbox_buttons()
 		if _visible_emails.is_empty():
@@ -305,8 +312,30 @@ func _dispose_current_email(chosen_action: String) -> void:
 		return
 
 	if manager and manager.has_method("classify_and_dispose_email") and not email_id.is_empty():
-		manager.call("classify_and_dispose_email", email_id, chosen_action)
+		var result: Variant = manager.call("classify_and_dispose_email", email_id, chosen_action)
+		if result is Dictionary and not bool(result.get("correct", true)):
+			request_virus_release.emit()
 	_refresh_from_source()
+
+
+func _get_expected_action(email: Dictionary) -> String:
+	var metadata: Dictionary = email.get("metadata", {})
+	var expected := str(metadata.get("disposition", email.get("disposition", "forward"))).to_lower()
+	if expected != "forward" and expected != "delete":
+		expected = "forward"
+	return expected
+
+
+func _wire_virus_controller() -> void:
+	var controller := get_node_or_null(virus_controller_path)
+	if controller == null:
+		push_warning("mail_ui.gd could not find virus controller at path: %s" % virus_controller_path)
+		return
+	if not controller.has_method("release_random_virus"):
+		push_warning("Virus controller is missing release_random_virus().")
+		return
+	if not request_virus_release.is_connected(Callable(controller, "release_random_virus")):
+		request_virus_release.connect(Callable(controller, "release_random_virus"))
 
 
 func _on_logout_pressed() -> void:

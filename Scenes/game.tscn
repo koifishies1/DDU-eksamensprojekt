@@ -1,33 +1,63 @@
 [gd_scene format=3 uid="uid://cynoo5q456jj4"]
 
-[ext_resource type="Texture2D" uid="uid://d38lyiohwmgf" path="res://Assets/Textures/background.png" id="1_ebmjs"]
-[ext_resource type="Texture2D" uid="uid://ehtomufjkmd0" path="res://Assets/Textures/taskbar.png" id="2_3dryh"]
-[ext_resource type="Texture2D" uid="uid://dxac8c06knmni" path="res://Assets/Textures/mail.png" id="3_wowpa"]
+[ext_resource type="Texture2D" uid="uid://d38lyiohwmgf" path="res://Assets/background.png" id="1_ebmjs"]
+[ext_resource type="Texture2D" uid="uid://ehtomufjkmd0" path="res://Assets/taskbar.png" id="2_3dryh"]
+[ext_resource type="Texture2D" uid="uid://dxac8c06knmni" path="res://Assets/mail.png" id="3_wowpa"]
 [ext_resource type="Script" uid="uid://cfiiesa0w7oap" path="res://Scripts/mail_icon.gd" id="4_7t8sx"]
-[ext_resource type="FontFile" uid="uid://dqgpol2ay6t8e" path="res://Assets/Textures/ByteBounce.ttf" id="4_i6g32"]
-[ext_resource type="Texture2D" uid="uid://belkis7fq6m52" path="res://Assets/Textures/trash.png" id="5_wowpa"]
-[ext_resource type="Texture2D" uid="uid://7eqkdl1w4m7s" path="res://Assets/Textures/notepad.png" id="6_i6g32"]
-[ext_resource type="Texture2D" uid="uid://djlva55lrdx7t" path="res://Assets/Textures/mailBackground.png" id="6_mg4q0"]
+[ext_resource type="FontFile" uid="uid://dqgpol2ay6t8e" path="res://Assets/ByteBounce.ttf" id="4_i6g32"]
+[ext_resource type="Texture2D" uid="uid://belkis7fq6m52" path="res://Assets/trash.png" id="5_wowpa"]
+[ext_resource type="Texture2D" uid="uid://7eqkdl1w4m7s" path="res://Assets/notepad.png" id="6_i6g32"]
+[ext_resource type="Texture2D" uid="uid://djlva55lrdx7t" path="res://Assets/mailBackground.png" id="6_mg4q0"]
 [ext_resource type="Script" uid="uid://du0kvtaq6m1dl" path="res://Scripts/notepadIcon.gd" id="7_1l0tm"]
-[ext_resource type="Texture2D" uid="uid://b7tvqby8rxhin" path="res://Assets/Textures/deleteBtn.png" id="7_vm72l"]
-[ext_resource type="Texture2D" uid="uid://deuivwnlfduop" path="res://Assets/Textures/forwardBtn.png" id="8_22asu"]
-[ext_resource type="Texture2D" uid="uid://jsdtb5bqdeo" path="res://Assets/Textures/NotepadPage.png" id="8_v158k"]
-[ext_resource type="Texture2D" uid="uid://c5lyctgxqs8v4" path="res://Assets/Textures/closeButton.png" id="9_fkdbe"]
-[ext_resource type="Texture2D" uid="uid://u7p5163euqt8" path="res://Assets/Textures/Night1Text.png" id="9_h4fw4"]
+[ext_resource type="Texture2D" uid="uid://b7tvqby8rxhin" path="res://Assets/deleteBtn.png" id="7_vm72l"]
+[ext_resource type="Texture2D" uid="uid://deuivwnlfduop" path="res://Assets/forwardBtn.png" id="8_22asu"]
+[ext_resource type="Texture2D" uid="uid://jsdtb5bqdeo" path="res://Assets/NotepadPage.png" id="8_v158k"]
+[ext_resource type="Texture2D" uid="uid://c5lyctgxqs8v4" path="res://Assets/closeButton.png" id="9_fkdbe"]
+[ext_resource type="Texture2D" uid="uid://u7p5163euqt8" path="res://Assets/Night1Text.png" id="9_h4fw4"]
 [ext_resource type="Script" uid="uid://cghqgtncf2iue" path="res://Scripts/moveWindow.gd" id="9_rku1e"]
-[ext_resource type="Texture2D" uid="uid://bv2d0x602trlk" path="res://Assets/Textures/hoved_closebutton.png" id="11_rfjv2"]
+[ext_resource type="Texture2D" uid="uid://bv2d0x602trlk" path="res://Assets/hoved_closebutton.png" id="11_rfjv2"]
 [ext_resource type="Script" uid="uid://rxkh4fm23j0s" path="res://Scripts/close_button.gd" id="11_rku1e"]
-[ext_resource type="Texture2D" uid="uid://cpech2udp2kxd" path="res://Assets/Textures/cursor.png" id="13_nb51f"]
+[ext_resource type="Texture2D" uid="uid://cpech2udp2kxd" path="res://Assets/cursor.png" id="13_nb51f"]
 [ext_resource type="Script" uid="uid://dqlahgwesxu70" path="res://Scripts/cursor.gd" id="14_nnt18"]
-[ext_resource type="Texture2D" uid="uid://dfax6udaoqysq" path="res://Assets/Textures/cursorClick.png" id="15_ewbju"]
-[ext_resource type="Texture2D" uid="uid://dht68jpdqddwf" path="res://Assets/Textures/tilemapNote.png" id="16_nnt18"]
+[ext_resource type="Texture2D" uid="uid://dfax6udaoqysq" path="res://Assets/cursorClick.png" id="15_ewbju"]
+[ext_resource type="Texture2D" uid="uid://dht68jpdqddwf" path="res://Assets/tilemapNote.png" id="16_nnt18"]
 [ext_resource type="Script" uid="uid://fgbw77mqa53m" path="res://Scripts/mail_ui.gd" id="17_mailui"]
-[ext_resource type="Texture2D" uid="uid://dayc8kbk3utcw" path="res://Assets/Textures/LogOutBtn.png" id="19_mg4q0"]
+[ext_resource type="Texture2D" uid="uid://dayc8kbk3utcw" path="res://Assets/LogOutBtn.png" id="19_mg4q0"]
+[ext_resource type="Texture2D" uid="uid://dmpprag3gi3mj" path="res://Assets/FreePhone.png" id="20_22asu"]
 [ext_resource type="AudioStream" uid="uid://dbf5pjaqoq0cd" path="res://Assets/sounds/mouseclick.mp3" id="24_vm72l"]
+[ext_resource type="Script" uid="uid://nrv4jedpatwb" path="res://Scenes/viruses.gd" id="25_virus"]
+[ext_resource type="AudioStream" uid="uid://m7a6m2hykjix" path="res://Assets/sounds/recycleBin.mp3" id="26_trash"]
 
 [sub_resource type="Theme" id="Theme_7t8sx"]
 default_font = ExtResource("4_i6g32")
 default_font_size = 32
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkdbe"]
+atlas = ExtResource("20_22asu")
+region = Rect2(0, 0, 265, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81klo"]
+atlas = ExtResource("20_22asu")
+region = Rect2(265, 0, 265, 180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tgy6u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkdbe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81klo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ewbju"]
 texture = ExtResource("16_nnt18")
@@ -113,6 +143,7 @@ text = "Mail"
 [node name="mail" type="Control" parent="gameController/desktop/mailIcon" unique_id=150843514]
 unique_name_in_owner = true
 visible = false
+z_index = 100
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -305,6 +336,7 @@ text = "Notepad"
 [node name="notepad" type="Control" parent="gameController/desktop/notepadIcon" unique_id=761048965]
 unique_name_in_owner = true
 visible = false
+z_index = 100
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -355,6 +387,22 @@ offset_bottom = 646.0
 texture_normal = ExtResource("19_mg4q0")
 ignore_texture_size = true
 stretch_mode = 4
+
+[node name="Viruses" type="Control" parent="gameController" unique_id=756189555]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("25_virus")
+
+[node name="PhoneVirus" type="AnimatedSprite2D" parent="gameController/Viruses" unique_id=1837733567]
+position = Vector2(954, 472)
+scale = Vector2(0.9981132, 1)
+sprite_frames = SubResource("SpriteFrames_tgy6u")
+frame_progress = 0.17402717
+
+[node name="trashSound" type="AudioStreamPlayer" parent="gameController/Viruses"]
+stream = ExtResource("26_trash")
+bus = &"SFX"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=174590262]
 tile_set = SubResource("TileSet_85qyi")
