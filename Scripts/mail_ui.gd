@@ -26,6 +26,8 @@ var _current_index: int = -1
 var _session_hidden_ids: Dictionary = {}
 var _session_results: Dictionary = {}
 var _session_seen_ids: Dictionary = {}
+## Wrong forward/delete count this shift when using `permanent_disposal` (MailManager persistence).
+var _shift_wrong_disposal_count: int = 0
 var _email_glitch_enabled := false
 var _email_glitch_elapsed := 0.0
 var _email_glitch_interval := 0.06
@@ -33,6 +35,8 @@ var _base_subject_text := ""
 var _base_sender_text := ""
 var _base_body_text := ""
 const _GLITCH_CHARSET := "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+const LOSE_CINEMATIC_SCENE := "res://Scenes/lose_cinematic.tscn"
+const MAX_INCORRECT_DISPOSALS_BEFORE_LOSE := 3
 
 
 func _ready() -> void:
@@ -66,6 +70,7 @@ func _process(delta: float) -> void:
 func _start_session_if_possible() -> void:
 	if use_preview_data:
 		return
+	_shift_wrong_disposal_count = 0
 	var manager := get_node_or_null("/root/MailManager")
 	if manager != null and manager.has_method("start_game_session"):
 		# MailManager is an autoload singleton; always reset so each run of game.tscn gets a fresh timer.
@@ -409,6 +414,9 @@ func _dispose_current_email(chosen_action: String) -> void:
 			_try_request_virus_release()
 		_visible_emails.remove_at(_current_index)
 		_rebuild_inbox_buttons()
+		if _count_incorrect_session_disposals() >= MAX_INCORRECT_DISPOSALS_BEFORE_LOSE:
+			get_tree().change_scene_to_file(LOSE_CINEMATIC_SCENE)
+			return
 		if _visible_emails.is_empty():
 			_current_index = -1
 			_show_empty_state()
@@ -424,8 +432,13 @@ func _dispose_current_email(chosen_action: String) -> void:
 			str(result.get("expected_action", "forward"))
 		):
 			_try_request_virus_release()
-	_refresh_from_source()
-	_update_logout_button_state()
+		if result is Dictionary and bool(result.get("ok", false)) and not bool(result.get("correct", false)):
+			_shift_wrong_disposal_count += 1
+			if _shift_wrong_disposal_count >= MAX_INCORRECT_DISPOSALS_BEFORE_LOSE:
+				get_tree().change_scene_to_file(LOSE_CINEMATIC_SCENE)
+				return
+		_refresh_from_source()
+		_update_logout_button_state()
 
 
 func _get_expected_action(email: Dictionary) -> String:
@@ -447,6 +460,15 @@ func _try_request_virus_release() -> void:
 
 func _should_trigger_virus(chosen_action: String, expected_action: String) -> bool:
 	return chosen_action == "forward" and expected_action == "delete"
+
+
+func _count_incorrect_session_disposals() -> int:
+	var n := 0
+	for email_id in _session_results.keys():
+		var entry: Dictionary = _session_results[email_id]
+		if not bool(entry.get("correct", false)):
+			n += 1
+	return n
 
 
 func _wire_virus_controller() -> void:
@@ -502,12 +524,19 @@ func _on_logout_pressed() -> void:
 	if manager.has_method("set_last_run_summary"):
 		manager.call("set_last_run_summary", summary)
 
+	var gp: Node = null
+	var finishing_night_5 := false
 	if not use_preview_data:
-		var gp := get_node_or_null("/root/GameProgress")
+		gp = get_node_or_null("/root/GameProgress")
+		if gp != null and gp.has_method("get_current_night"):
+			finishing_night_5 = int(gp.call("get_current_night")) == 5
 		if gp != null and gp.has_method("complete_shift_end_of_day"):
 			gp.call("complete_shift_end_of_day")
 
-	get_tree().change_scene_to_file("res://Scenes/end_screen.tscn")
+	if finishing_night_5:
+		get_tree().change_scene_to_file("res://Scenes/victory.tscn")
+	else:
+		get_tree().change_scene_to_file("res://Scenes/end_screen.tscn")
 
 
 func _update_logout_button_state() -> void:

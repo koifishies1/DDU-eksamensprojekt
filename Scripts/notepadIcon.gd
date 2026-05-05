@@ -17,19 +17,23 @@ func _should_show_day1_notepad_hint() -> bool:
 
 func _start_day1_hint_flash() -> void:
 	_stop_day1_hint_flash()
+	var dim := Color(1.0, 1.0, 1.0, 1.0)
+	# HDR-style modulate peaks read as a strong glow / bloom in Forward+.
+	var bright := Color(3.6, 3.6, 2.0, 1.0)
+	modulate = dim
 	_hint_flash_tween = create_tween()
 	_hint_flash_tween.set_loops()
 	_hint_flash_tween.set_trans(Tween.TRANS_SINE)
 	_hint_flash_tween.set_ease(Tween.EASE_IN_OUT)
-	_hint_flash_tween.tween_property(self, "modulate:a", 0.35, 0.5)
-	_hint_flash_tween.tween_property(self, "modulate:a", 1.0, 0.5)
+	_hint_flash_tween.tween_property(self, "modulate", bright, 0.5)
+	_hint_flash_tween.tween_property(self, "modulate", dim, 0.5)
 
 
 func _stop_day1_hint_flash() -> void:
 	if _hint_flash_tween != null:
 		_hint_flash_tween.kill()
 		_hint_flash_tween = null
-	modulate = Color(1, 1, 1, 1)
+	modulate = Color.WHITE
 
 
 func _is_blocked_by_window() -> bool:

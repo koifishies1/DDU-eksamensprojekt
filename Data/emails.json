@@ -62,9 +62,9 @@
 	{
 	  "id": "scam_nigerian_prince_001",
 	  "day": 2,
-	  "subject": "Inheritance Transfer Request",
+	  "subject": "A letter from Prince Yemi Ajibade",
 	  "sender": "yemiajibade@gmail.ng",
-	  "body": "Dear Distant Relative,\n\nAfter many years of searching through various channels, I have finally discovered your email address. It is with great joy that I write to you as your long-lost distant relative. My name is Prince Yemi Ajibade of the Kingdom of Oyo, and I am contacting you with a most unusual family request.\n\nI have come into an amount of wealth so large that it has become difficult for me to manage. Unfortunately, due to certain passport-related complications, I am unable to travel to your country myself. For this reason, I humbly ask for your assistance in transferring part of this fortune into your account, so that you may enjoy a comfortable and prosperous life.\n\nI am prepared to transfer the sum of 20 million dollars to you. All I require is your credit card information so that the transfer may be completed without delay.\n\nShould you suspect that this message is a scam, please see the attached photograph of me standing proudly in front of my wealth. This clearly proves that I am legitimate and not fake.\n\nWith warm regards your dear family member,\nPrince Yemi Ajibade\n\n[img]res://Assets/EmailImages/NigerianPrince.png[/img]",
+	  "body": "Dear Distant Relative,\n\nAfter many years of searching through various channels, I have finally discovered your email address. It is with great joy that I write to you as your long-lost distant relative.\n\nMy name is Prince Yemi Ajibade of the Kingdom of Oyo, and I am contacting you with a most unusual family request. I have come into an amount of wealth so large that it has become difficult for me to manage. Unfortunately, due to certain passport-related complications, I am unable to travel to your country myself.\n\nFor this reason, I humbly ask for your assistance in transferring part of this fortune into your account, so that you may enjoy a comfortable and prosperous life. I am prepared to transfer the sum of 20 million dollars to you.\n\nAll I require is your credit card information so that the transfer may be completed without delay.\n\nShould you suspect that this message is a scam, please see the attached photograph of me standing proudly in front of my wealth. This clearly proves that I am legitimate and not fake.\n\nWith warm regards your dear family member,\nPrince Yemi Ajibade\n\n[img]res://Assets/EmailImages/NigerianPrince.png[/img]",
 	  "type": "scam",
 	  "disposition": "delete",
 	  "conditions": {
@@ -76,9 +76,9 @@
 	{
 	  "id": "scam_fake_microsoft_002",
 	  "day": 2,
-	  "subject": "Security Alert - Action Required",
+	  "subject": "We detected activity on your Microsoft account",
 	  "sender": "support@rnicrosoft.com",
-	  "body": "We detected activity on your Microsoft account that may require your attention for security reasons.\n\nWe at Microsoft want you, the user, to have the best possible experience using our services, so therefore we require personal information from you. We request that you kindly provide us with your email and password, so that we may take a closer look at the problem and fix it.\n\nHere are the recommended steps:\nVisit our website at rnicrosoft.com/support/breaches.\nFill in the boxes requiring personal information.\nAwait further information regarding the progress of the issue.\n\nSincerely,\nMicrosoft Support",
+	  "body": "Hello Jordan,\n\nWe detected activity on your Microsoft account that may require your attention for security reasons.\n\nWe at Microsoft want you, the user, to have the best possible experience using our services, so therefore we require personal information from you.\n\nWe request that you kindly provide us with your email and password, so that we may take a closer look at the problem and fix it.\n\nHere are the recommended steps:\n\nVisit our website at rnicrosoft.com/support/breaches.\n\nFill in the boxes requiring personal information.\n\nAwait further information regarding the progress of the issue.\n\nSincerely,\nMicrosoft Support",
 	  "type": "scam",
 	  "disposition": "delete",
 	  "conditions": {
@@ -90,9 +90,9 @@
 	{
 	  "id": "legit_therapy_003",
 	  "day": 2,
-	  "subject": "Therapy Package Verification",
+	  "subject": "Therapy package verification",
 	  "sender": "harborgrove@201.therapy.com",
-	  "body": "Hello Jordan,\n\nWe’re writing to ask you to verify the details of your upcoming therapy appointment and selected care package regarding your Persistent Depressive Disorder (Dysthymia).\n\nTo review or confirm your appointment, please visit the official Harbor & Grove Therapy website at harborgrove.therapy/sign_in, and sign in to your client portal. Here you will be required to fill out a form regarding your current mental state, so that we can better your first experience at Harbor & Grove Therapy.\n\nOnce resolved, you’ll be able to confirm:\nYour appointment date and time\nYour selected therapy package\nYour contact preferences\nAny forms that may need to be completed before your session\n\nIf anything looks incorrect, you can update your details through the portal or contact our support team directly through the website.\n\nThank you,\nClient Support Team\nHarbor & Grove Therapy",
+	  "body": "Hello Jordan,\n\nWe're writing to ask you to verify the details of your upcoming therapy appointment and selected care package regarding your Persistent Depressive Disorder (Dysthymia).\n\nTo review or confirm your appointment, please visit the official Harbor & Grove Therapy website at harborgrove.therapy/sign_in, and sign in to your client portal. Here you will be required to fill out a form regarding your current mental state, so that we can better your first experience at Harbor & Grove Therapy.\n\nOnce resolved, you'll be able to confirm:\n\nYour appointment date and time\n\nYour selected therapy package\n\nYour contact preferences\n\nAny forms that may need to be completed before your session\n\nIf anything looks incorrect, you can update your details through the portal or contact our support team directly through the website.\n\nThank you,\nClient Support Team\nHarbor & Grove Therapy",
 	  "type": "legit",
 	  "disposition": "forward",
 	  "conditions": {}
@@ -100,9 +100,9 @@
 	{
 	  "id": "legit_bar_photos_004",
 	  "day": 2,
-	  "subject": "Photos from Work Excursion",
+	  "subject": "Bar hangout — photos from the work excursion",
 	  "sender": "simonrischfield94@gmail.com",
-	  "body": "Hey boss,\n\nI hope you’re doing well. I finally had a chance to go through the photos from last weekend from our work excursion to the bar, and I wanted to send them over before I forgot.\n\nThere were more good ones than I expected, so I picked out the best ones and attached them here. I also included the group photo we took near the end of the day. I’m glad we remembered to take one before everyone left, because it turned out really nice.\n\nI wasn’t sure who wanted copies, so I figured I’d send them to you first. I attached the images below.\n\nSincerely,\nSimon - Marketing Assistant\n\n[img]res://Assets/EmailImages/work1.png[/img]\n[img]res://Assets/EmailImages/work2.png[/img]\n[img]res://Assets/EmailImages/work3.png[/img]",
+	  "body": "Hey boss,\n\nI hope you're doing well. I finally had a chance to go through the photos from last weekend from our work excursion to the bar, and I wanted to send them over before I forgot. There were more good ones than I expected, so I picked out the best ones and attached them here.\n\nI also included the group photo we took near the end of the day. I'm glad we remembered to take one before everyone left, because it turned out really nice. I wasn't sure who wanted copies, so I figured I'd send them to you first. I attached the images below.\n\nSincerely,\nSimon - Marketing Assistant\n\n[img]res://Assets/EmailImages/work1.png[/img]\n[img]res://Assets/EmailImages/work2.png[/img]\n[img]res://Assets/EmailImages/work3.png[/img]",
 	  "type": "legit",
 	  "disposition": "forward",
 	  "conditions": {}
@@ -110,9 +110,9 @@
 	{
 	  "id": "legit_order_005",
 	  "day": 2,
-	  "subject": "Order Confirmation #48291",
+	  "subject": "BrightHome Essentials order verification",
 	  "sender": "info@brighthomeessentials.com",
-	  "body": "Hi Jordan Pearl,\n\nThank you for your order from BrightHome Essentials! We’re happy to confirm that we received your order and it is now being processed.\n\nOrder Number: #48291\nOrder Date: October 29, 1988\nEstimated Delivery: September 10–12, 1988\n\nShipping Address:\nJordan Lee\n184 Maple Ridge Avenue\nPortland, OR 97205\n\nHere is a summary of your order:\n\nItems Ordered:\nCeramic Coffee Mug Set — Ocean Blue, Set of 4 — Quantity: 1 — Price: $28.00\nCotton Kitchen Towel Pack — Sage Green, Set of 6 — Quantity: 1 — Price: $18.50\nVanilla & Cedar Scented Candle — 12 oz — Quantity: 2 — Price: $16.00 each\nBamboo Drawer Organizer — Medium — Quantity: 1 — Price: $24.99\n\nSubtotal: $103.49\nShipping: $6.99\nTax: $8.84\nTotal: $119.32\n\nYou will receive another email with tracking information once your order has shipped. Most orders are packed and shipped within 8–12 business days.\n\nPlease review your shipping details and order summary above. If anything looks incorrect, contact us as soon as possible so we can make changes before your package is sent out.\n\nThank you for shopping with BrightHome Essentials. We hope you enjoy your new items!\n\nBest regards,\nCustomer Support Team\nBrightHome Essentials",
+	  "body": "Hey Jordan,\n\nThank you for your order from BrightHome Essentials! We're happy to confirm that we received your order and it is now being processed.\n\nOrder Number: #48291\nOrder Date: October 29, 1988\nEstimated Delivery: September 10-12, 1988\n\nShipping Address:\nJordan Pearl\n184 Maple Ridge Avenue\nPortland, OR 97205\n\nHere is a summary of your order:\n\nItems Ordered:\n\nCeramic Coffee Mug Set - Ocean Blue, Set of 4\nQuantity: 1\nPrice: $28.00\n\nCotton Kitchen Towel Pack - Sage Green, Set of 6\nQuantity: 1\nPrice: $18.50\n\nVanilla & Cedar Scented Candle - 12 oz\nQuantity: 2\nPrice: $16.00 each\n\nBamboo Drawer Organizer - Medium\nQuantity: 1\nPrice: $24.99\n\nSubtotal: $103.49\nShipping: $6.99\nTax: $8.84\nTotal: $119.32\n\nYou will receive another email with tracking information once your order has shipped. Most orders are packed and shipped within 8-12 business days.\n\nPlease review your shipping details and order summary above. If anything looks incorrect, contact us as soon as possible so we can make changes before your package is sent out.\n\nThank you for shopping with BrightHome Essentials. We hope you enjoy your new items!\n\nBest regards,\nCustomer Support Team\nBrightHome Essentials",
 	  "type": "legit",
 	  "disposition": "forward",
 	  "conditions": {}
@@ -120,9 +120,9 @@
 	{
 	  "id": "scam_pinkvice_006",
 	  "day": 3,
-	  "subject": "Exclusive Membership Invitation",
+	  "subject": "Pink Vice Club - exclusive membership invitation",
 	  "sender": "info@pinkvice.com",
-	  "body": "Dear valued guest,\n\nYou have been selected for an exclusive Pink Vice Club membership, even though you have not visited us before. This is a limited invitation and must be accepted immediately.\n\nYour profile has already been pre-approved for VIP benefits, including priority entry, private event access, special birthday rewards, and members-only discounts. However, your invitation will expire in 30 minutes unless you confirm your details now.\n\nTo activate your membership, click the link below and enter your full name, phone number, email address, and payment information:\nActivate Pink Vice Club Membership Now\npinkvice-membership-confirmation.info.com\n\nFailure to complete this step may result in your invitation being permanently removed from our system. You may also lose access to future Pink Vice offers and VIP guest opportunities.\n\nDo not ignore this message. This is your final notice.\n\nRegards,\nPink Vice Membership Department",
+	  "body": "Dear valued guest,\n\nYou have been selected for an exclusive Pink Vice Club membership, even though you have not visited us before. This is a limited invitation and must be accepted immediately.\n\nYour profile has already been pre-approved for VIP benefits, including priority entry, private event access, special birthday rewards, and members-only discounts. However, your invitation will expire in 30 minutes unless you confirm your details now.\n\nTo activate your membership, click the link below and enter your full name, phone number, email address, and payment information:\n\nActivate Pink Vice Club Membership Now\npinkvice-membership-confirmation.info.com\n\nFailure to complete this step may result in your invitation being permanently removed from our system. You may also lose access to future Pink Vice offers and VIP guest opportunities.\n\nDo not ignore this message. This is your final notice.\n\nRegards,\nPink Vice Membership Department",
 	  "type": "scam",
 	  "disposition": "delete",
 	  "conditions": {
@@ -134,9 +134,9 @@
 	{
 	  "id": "scam_paypal_007",
 	  "day": 3,
-	  "subject": "Unauthorized Transfer of 125,000 USD",
+	  "subject": "Unauthorized Transfer Detected",
 	  "sender": "enquiry@paypal.com",
-	  "body": "Dear User,\n\nWe have detected a high‑value transfer request from your PayPal‑linked account totaling 125.000 USD to an unknown recipient identified as:\n\nRecipient: “Self‑Transfer Backup Wallet”\nLocation: Unverified\nStatus: Pending — Requires Immediate Confirmation\n\nThis transaction will be processed automatically within the next 5 minutes unless you confirm that you initiated it. If this was NOT you, we require immediate identity verification to prevent permanent loss of funds and potential account restrictions.\n\nTo stop the transfer, please complete the emergency verification form:\n• Full name\n• Date of birth\n• Linked account email\n• Last 4 digits of your payment method\n• Security phrase (if applicable)\n\nLink here à[VERIFY IDENTITY NOW] ß Link here (Link expires in 5 minutes)\n\nFailure to act will result in the transfer being completed and your account being flagged for suspicious activity.\n\nThank you for your prompt attention,\nPayPal Secure Operations (Fictional)",
+	  "body": "Dear User,\n\nWe have detected a high-value transfer request from your PayPal-linked account totaling 125,000 USD to an unknown recipient identified as:\n\nRecipient: \"Self-Transfer Backup Wallet\"\nLocation: Unverified\nStatus: Pending - Requires Immediate Confirmation\n\nThis transaction will be processed automatically within the next 5 minutes unless you confirm that you initiated it.\n\nIf this was NOT you, we require immediate identity verification to prevent permanent loss of funds and potential account restrictions.\n\nTo stop the transfer, please complete the emergency verification form:\n\nFull name\n\nDate of birth\n\nLinked account email\n\nLast 4 digits of your payment method\n\nSecurity phrase (if applicable)\n\nLink here - [VERIFY IDENTITY NOW] - Link here\n(Link expires in 5 minutes)\n\nFailure to act will result in the transfer being completed and your account being flagged for suspicious activity.\n\nThank you for your prompt attention, PayPal Secure Operations (Fictional)",
 	  "type": "scam",
 	  "disposition": "delete",
 	  "conditions": {
@@ -148,9 +148,19 @@
 	{
 	  "id": "legit_office_008",
 	  "day": 3,
-	  "subject": "Office Situation Follow-up",
+	  "subject": "Office drama - following up",
 	  "sender": "mayahartmann@gmail.com",
-	  "body": "Hi boss.\n\nI wanted to check in after what happened in the office today. Things felt a little tense after the conversation near the break room, and I don’t want any awkwardness to carry into the rest of the week.\n\nI know there has been some confusion about who was supposed to finish the client report, and I think that misunderstanding made the situation worse than it needed to be. A few people seemed frustrated, especially after the deadline got moved up, but I don’t think anyone meant for it to turn into a bigger issue.\n\nFor what it’s worth, I think it would help if everyone talked it through calmly tomorrow instead of letting rumors spread around the office. It’s already starting to feel like people are choosing sides, and that usually only makes things messier.\n\nI’m not trying to blame anyone. I just think we should clear the air before it affects the project or makes the team uncomfortable. You’ve always been good at keeping things level-headed, so I wanted to let you know what I noticed.\n\nHopefully tomorrow is a little less dramatic.\n\nBest,\nMaya - Project Coordinator",
+	  "body": "Hey boss,\n\nI wanted to check in after what happened in the office today. Things felt a little tense after the conversation near the break room, and I don't want any awkwardness to carry into the rest of the week.\n\nI know there has been some confusion about who was supposed to finish the client report, and I think that misunderstanding made the situation worse than it needed to be. A few people seemed frustrated, especially after the deadline got moved up, but I don't think anyone meant for it to turn into a bigger issue.\n\nFor what it's worth, I think it would help if everyone talked it through calmly tomorrow instead of letting rumors spread around the office. It's already starting to feel like people are choosing sides, and that usually only makes things messier.\n\nI'm not trying to blame anyone. I just think we should clear the air before it affects the project or makes the team uncomfortable. You've always been good at keeping things level-headed, so I wanted to let you know what I noticed.\n\nHopefully tomorrow is a little less dramatic.\n\nBest,\nMaya - Project Coordinator",
+	  "type": "legit",
+	  "disposition": "forward",
+	  "conditions": {}
+	},
+	{
+	  "id": "legit_timmy_pearl_019",
+	  "day": 3,
+	  "subject": "Dad!!!! its me",
+	  "sender": "timmypearl@gmail.com",
+	  "body": "hi dad!!!1!\n\ni hope you are ok at working\n\nthis is my first email ever!!! mom helped me a little but i typed most of it myself see?\n\ndad you need to write back ok? if you dont write back by tomorrow i will cry a LOT and i wont share my candy with you EVER again. not even the gummy bears.\n\nso you better write back. promise?\n\nfrom the best timmy\nalso i love you even if you write back slow but pls dont be slow ok bye",
 	  "type": "legit",
 	  "disposition": "forward",
 	  "conditions": {}
@@ -158,9 +168,9 @@
 	{
 	  "id": "scam_tuition_009",
 	  "day": 4,
-	  "subject": "Urgent Tuition Payment",
-	  "sender": "sandra1ee@yahoo.com",
-	  "body": "Hey sweetie,\n\nI am having to write Quickly because there is a problem with the children’s tuition payment. The school office says the payment has not gone through, and they need it fixed TODAY.\n\nI know this is sudden, but they said if we do not pay soon, the childrens may not be allowed to attend class tomorrows. I am very worried and don’t want this to become a bigger issue.\n\nThey said the amount due is 2,850.00$ and it must be sent to the new tuition payment account. Please do not wait too long, because there may be extra fees added if this is not done fast.\n\nCould you click the payment link below to pay for their tuition AS FAST AS POSSIPLE?\nPAY TUITION HERE: school-tuition-fast-pay.info.com!\n\nPlease handle this as soon as you can The office said this is the FINAL NOTICE, and I don’t want the kids records to be affectet.\n\nThank you Jordan, please hurry.",
+	  "subject": "Urgent - children's tuition payment",
+	  "sender": "sandrap3arl@yahoo.com",
+	  "body": "Hey sweetie,\n\nI am having to write Quickly because there is a problem with the children's tuition payment. The school office says the payment has not gone through, and they need it fixed TODAYs.\n\nI know this is sudden, but they said if we do not pay soon, the childrens may not be allowed to attend class tomorrows. I am very worried and don't want this to become a bigger issue.\n\nThey said the amount due is 2,850.00$ and it must be sent to the new tuitions payment account. Please do not wait too long, because there may be extra fees added if this is not done fast.\n\nCould you click the payment link below to pay for their tuition AS FAST AS POSSIPLE?\n\nPAY TUITION HERE:\nschool-tuition-fast-pay.info.com\n\nPlease handle this as soon as you can The office said this is the FINAL NOTICE, and I don't want the kids records to be affectet.\n\nThank you Jordan, please hurry.\n\nLove,\nYour wife",
 	  "type": "scam",
 	  "disposition": "delete",
 	  "conditions": {
@@ -172,9 +182,9 @@
 	{
 	  "id": "scam_lottery_010",
 	  "day": 4,
-	  "subject": "Lottery Winner Notification",
+	  "subject": "Congratulations - you are the GRAND PRIZE WINNER",
 	  "sender": "winner@lotto-draw.net",
-	  "body": "Hello Jordan,\n\nYou have won $50,000 but must pay a fee to claim it.\n\nAct quickly or lose your prize.",
+	  "body": "Hello Jordan,\n\nWe are happy to inform you that your email address was randomly selected from our global lottery database as the GRAND PRIZE WINNER of this month's International Cash Sweepstakes. Yes Jordan, you have won the amount of $50,000 US dollars. That is fifty thousand dollars just waiting for you to claim it.\n\nThis is a once in a lifetime opportunity that almost never happens to ordinary people like you. Many peoples have tried for years to win this lottery, and you did it without even buying a ticket! Isnt that amazing??\n\nNow here is the important part. To receive your $50,000 prize money, you are required to pay a small one-time processing fee of only $150. This fee covers the international bank transfer, legal paperwork, and tax clearance. After you pay the $150, your $50,000 will be deposited directly into your bank account within 2 to 3 hours.\n\nBut you must act very quickly Jordan. The deadline for claiming your prize is tomorrow at 12:00 PM noon. If we do not receive your processing fee by that time, we will be forced to select another winner, and you will lose your chance forever. Imagine losing fifty thousand dollars just because you waited too long - that would be terrible right?\n\nTo claim your prize, please reply to this email immediately with your full name, address, phone number, and we will send you payment instructions for the $150 fee. Do not share this good news with anyone else until after you receive your money.\n\nCongratulations once again and we hope to hear from you very very soon.\n\nBest regards,\nMr. Jonathan Edwards\nClaims Department\nInternational Lottery Board",
 	  "type": "scam",
 	  "disposition": "delete",
 	  "conditions": {
@@ -186,47 +196,45 @@
 	{
 	  "id": "scam_apple_011",
 	  "day": 4,
-	  "subject": "Apple ID Security Alert",
+	  "subject": "Important: your Apple ID has been locked",
 	  "sender": "admin@samsung-s3curity-v3rify.com",
-	  "body": "Hello Jordan,\n\nWe are happy to inform you that your email address was randomly selected from our global lottery database as the GRAND PRIZE WINNER of this month's International Cash Sweepstakes.\n\nYes Jordan, you have won the amount of $50,000 US dollars. That is fifty thousand dollars just waiting for you to claim it. This is a once in a lifetime opportunity that almost never happens to ordinary people like you. Many peoples have tried for years to win this lottery and you did it without even buying a ticket! Isnt that amazing??\n\nNow here is the important part. To receive your $50,000 prize money, you are required to pay a small one-time processing fee of only $150. This fee covers the international bank transfer, legal paperwork, and tax clearance. After you pay the $150, your $50,000 will be deposited directly into your bank account within 2 to 3 hours.\n\nBut you must act very quickly Jordan. The deadline for claiming your prize is tomorrow at 12:00 PM noon. If we do not receive your processing fee by that time, we will be forced to select another winner, and you will lose your chance forever. Imagine losing fifty thousand dollars just because you waited too long – that would be terrible right?\n\nTo claim your prize, please reply to this email immediately with your full name, address, phone number, and we will send you payment instructions for the $150 fee. Do not share this good news with anyone else until after you receive your money.\n\nCongratulations once again and we hope to hear from you very very soon.\n\nBest regards,\nMr. Jonathan Edwards\nClaims Department\nInternational Lottery Board",
+	  "body": "Hello Jordan,\n\nThis is an important message from Apple security team. We are writing to you today because our systems have detected multiple failed login attempts on your iCloud account from different locations including China, Brazil, and Russia. After these attempts, one of them was successful. That means someone else has already accessed your Apple ID without your permission.\n\nRight now, we have locked your account to prevent further damage. But here is the bad news: if you do not verify your identity within the next 12 hours, your Apple ID will be permanently deleted from our servers. That means all your photos, contacts, notes, messages, calendar events, app purchases, and anything else you have stored in iCloud will be losts forever and cannot be recovered no matter what.\n\nWe cannot stress how serius this situation is for you. Many users ignored our previous warnings and lost everything they had on their phones. Do not let this happen to you.\n\nTo keep your account safe and avoid permanent deletion, please click on the link below right now and enter your Apple ID email, password, and credit card information for verification purposes:\n\nhttps://apple.com/Verify_AppleID_password.xyz\n\nAfter you complete the verification, your account will be unlocked within one hour and you will not lose any of your data. But remember, you have less than 12 hours starting from the time this email was sent. If you wait too long, it will be too late and we cannot help you.\n\nThank you for choosing Apple and we apologize for any trouble this may cause you.\n\nApple Security Team\nDo not reply to this email because it was sent from an automated system that cannot receive messages.",
 	  "type": "scam",
 	  "disposition": "delete",
 	  "conditions": {
 		"sender_mismatch": true,
 		"urgency": true,
-		"requests_sensitive_info": true
+		"requests_sensitive_info": true,
+		"bad_grammar": true,
+		"suspicious_link": true
 	  }
 	},
 	{
 	  "id": "legit_internal_012",
 	  "day": 4,
-	  "subject": "Q3 Timeline Update",
-	  "sender": "sarah.johnson@voltaicdynamics.co",
-	  "body": "Hi Jordan,\n\nSarah here from voltaicdynamics.ru. I need you to do something for me before end of day. I've attached an updated version of the Q3 timeline. The client requested a few changes this morning that didn't go through our normal approval chain.\n\nDon't mention this to anyone else on the team yet, I'll explain why later. Open the attachment when you're alone and let me know if the numbers on page 3 make sense to you. Just reply “confirmed” once you've reviewed it.\n\nThanks,\nSarah\nq3timeline.pdf",
+	  "subject": "Q3 timeline - updated file",
+	  "sender": "sarah.johnson@voltaicdynamics.com",
+	  "body": "Hi Jordan,\n\nSarah here from voltaicdynamics.ru. I need you to do something for me before end of day.\n\nI've attached an updated version of the Q3 timeline. The client requested a few changes this morning that didn't go through our normal approval chain. Don't mention this to anyone else on the team yet, I'll explain why later.\n\nOpen the attachment when you're alone and let me know if the numbers on page 3 make sense to you. Just reply \"confirmed\" once you've reviewed it.\n\nThanks,\nSarah\n\nq3timeline.pdf",
 	  "type": "legit",
 	  "disposition": "forward",
 	  "conditions": {}
 	},
 	{
-	  "id": "scam_marketing_013",
-	  "day": 5,
-	  "subject": "Feedback on Marketing Photos",
-	  "sender": "thomaseringale007@yahoo.com",
-	  "body": "Hey boSs,\n\nRequest to review attached photOs with strange capitalization and formatting.\n\nPhotos attached below.\n\n[img]res://Assets/EmailImages/Meeting.png[/img]\n[img]res://Assets/EmailImages/Meeting1.png[/img]",
-	  "type": "scam",
-	  "disposition": "delete",
-	  "conditions": {
-		"bad_grammar": true,
-		"suspicious_attachment": true,
-		"strange_formatting": true
-	  }
+	  "id": "legit_stax_billing_020",
+	  "day": 4,
+	  "subject": "Overdue invoice notice",
+	  "sender": "billing@staxsolutions.co",
+	  "body": "Hello Jordan,\n\nOur records show that an invoice totalling $847.50 remains unpaid on your account for 14 days past the due date. This is regarding the service agreement you signed on February 3, 1988.\n\nWe have attached a copy of the Due amount and the original contract for your reference. Please view it below\n\nIf we do not receive payment or proof of dispute within 48 hours, we will be forced to refer your account to our external collection's agency. Once these happens, your credit score may be negatively affected, and additional legal fees will be added to your balance.\n\nYou can avoid this by going to our website and submitting the due amount plus an additional fee for the late inquiry.\n\nThank you for your immediate attention to this matter.\n\nBilling Department\nStax Solutions",
+	  "type": "legit",
+	  "disposition": "forward",
+	  "conditions": {}
 	},
 	{
 	  "id": "scam_harborpearl_014",
 	  "day": 5,
-	  "subject": "Quick family favor",
+	  "subject": "Checking in - trip photo and a quick favor",
 	  "sender": "harborpearl@gmail.com",
-	  "body": "Hey son,\n\nI hope you're doing well. I feel like it's been a while since we last had a proper chat, so I wanted to reach out and see how you've been.\n\nHow are things on your end? What have you been up to lately? Still working on that big project you mentioned last time? And how are Timmy and Sandra doing? Did Timmy end up getting that bike he was hoping for?\n\nAs for me, I finally took that trip to the coast I've been talking about for ages. The weather was beautiful. I attached a bunch of photos from the trip so you can see what I've been up to.\n\nAnyway, I also wanted to ask you about something. I'm trying to get some money sent over to your aunt's account to help her with some home repairs, and I'm completely lost with this online banking thing. Would you mind if I wired a small amount through you?\n\nSend money here: chase.com/secure/transfer\n\nReply when you get a chance. I miss you lots.\n\nLove always,\nJane, your mom\n\n[img]res://Assets/EmailImages/Grandma.png[/img]",
+	  "body": "Hey son,\n\nI hope you're doing well. I feel like it's been a while since we last had a proper chat, so I wanted to reach out and see how you've been.\n\nHow are things on your end? What have you been up to lately? Still working on that big project, you mentioned last time? And how's Timmy and Sandra doing? Did Timmy end up getting that bike he was hoping for? I've been thinking about them both a lot.\n\nAs for me, I finally took that trip to the coast I've been talking about for ages. Oh my goodness, the weather was just beautiful. I attached a photo from the trip so you can see what I've been up to. It's one of the lighthouse at sunset that I'm especially proud of. Let me know if it comes through okay. You know how I am with technology.\n\nAnyway, I also wanted to ask you about something. I'm trying to get some money sent over to your aunt's account to help her with some home repairs, and I'm completely lost with this online banking thing. Would you mind if I wired a small amount through you? Here's the link to the transfer page my bank uses. Could you take a look when you have a minute and tell me if it looks safe?\n\nSend money here: chase.com/secure/transfer/jane_pearl.ro\n\nI wouldn't ask if it wasn't important, but you know how your aunt is. She won't let anyone help her unless it's family.\n\nReply when you get a chance, even if it's just a quick hello. I miss you lots.\n\nLove always,\nJane Pearl, your mom\n\n[img]res://Assets/EmailImages/Grandma.png[/img]",
 	  "type": "scam",
 	  "disposition": "delete",
 	  "conditions": {
@@ -238,9 +246,9 @@
 	{
 	  "id": "scam_inheritance_015",
 	  "day": 5,
-	  "subject": "Inheritance Transfer Notice",
+	  "subject": "Inheritance - official notice",
 	  "sender": "inheritance@lawfirm-uk.co",
-	  "body": "Hello Dear,\n\nI am writing to you today with wonderful news that will change your life forever. A wealthy distant relative who recently passed away in London has left you as the sole beneficiary of his estate valued at $2.5 million US dollars.\n\nWe have attached the official last will and testament document below for your review. Please open this attachment: Will_Document_Final.exe to see proof of your inheritance.\n\nTo release these funds to your bank account, all you need to do is pay a small administration fee of only $450 to cover the legal transfer cost and notary services. After we receive this fee your money will be wired to you within 24 hours.\n\nReply back immediately with your full name, address, and phone number and we will send you payment instructions.\n\nSincerely,\nAttorney Michael Graves\nInternational Inheritance Division",
+	  "body": "Hello Dear,\n\nI am writing to you today with wonderful news that will change your life forever. A wealthy distant relative who recently passed away in London has left you as the sole beneficiary of his estate valued at $2.5 million US dollars.\n\nWe have attached the official last will and testament document below for your review. Please open this attachment: Will_Document_Final.exe to see proof of your inheritance.\n\nTo release these funds to your bank account, all you need to do is pay a small administration fee of only $450 to cover the legal transfer cost and notary services. After we receive this fee your money will be wired to you within 24 hours.\n\nDo not let this opportunity slip away Jordan. This kind of luck does not happen twice in ones lifetime.\n\nReply back immediately with your full name address phone number and we will send you payment instructions.\n\nCongratulations on your new fortune.\n\nSincerely,\nAttorney Michael Graves\nInternational Inheritance Division",
 	  "type": "scam",
 	  "disposition": "delete",
 	  "conditions": {
@@ -250,11 +258,11 @@
 	  }
 	},
 	{
-	  "id": "scam_marketing_photos_016",
+	  "id": "scam_thomas_marketing_013",
 	  "day": 5,
 	  "subject": "Feedback on marketing photos",
 	  "sender": "thomaseringale007@yahoo.com",
-	  "body": "Hey boss,\n\nI wanted to let you know that Quandale from my mArketing team has reached out asking me to review some photos for marketing and provide fEedback.\n\nI'm hapPy to take a look, but I wanted to check with you first to make sure this is aligned with our current priorities and if there's anything specific you'd like me to foCus on such as presentation and quality.\n\nPlease let me knOw how you'd like me to proceed. The photos are attached below.\n\nI will have to haste you a Bit, so that quandaLe can rework some of the photos. Therefore I would like an answer back before tomorrow.\n\nBest rEgards,\nThomas - Marketing team head\n\n[img]res://Assets/EmailImages/Meeting.png[/img]\n[img]res://Assets/EmailImages/Meeting1.png[/img]",
+	  "body": "Hey boss,\n\nI wanted to let you know that Quandale from my Marketing team has reached out asking me to review some photos for marketing and provide Feedbacks.\n\nI'm haqqy to take a look, but I wanted to check with you first to make sure this is aligned with our current priorities and that there's anything specific youd like me to fokus on such as presentation and quality.\n\nPlease let me know how you'd would like me to proceed. The photos are attached below.\n\nI will have to haste you a Bit, so that quandale can rework some of the photos. Therefore, I would like an answer back ASAP.\n\nBest regards,\n\nThomas - Marketing team head\n\n[img]res://Assets/EmailImages/Meeting.png[/img]\n[img]res://Assets/EmailImages/Meeting1.png[/img]",
 	  "type": "scam",
 	  "disposition": "delete",
 	  "conditions": {
@@ -266,7 +274,7 @@
 	{
 	  "id": "legit_team_outing_017",
 	  "day": 5,
-	  "subject": "Team outing contact check",
+	  "subject": "Team outing - need your number",
 	  "sender": "lisa.martinez@velosolutions.com",
 	  "body": "Hi Jordan,\n\nHope you're having a good week so far.\n\nI'm putting together the contact list for next Friday's team outing, and I realized I don't have your current mobile number. Could you send it over when you have a moment?\n\nAlso, I attached a rough schedule for the day in case you wanted to see what time we're heading back. Nothing is final yet, but it gives you an idea.\n\nLet me know if you're planning to drive yourself or if you want to ride with the group from the office.\n\nThanks,\nLisa",
 	  "type": "legit",
@@ -276,9 +284,9 @@
 	{
 	  "id": "legit_password_notice_018",
 	  "day": 5,
-	  "subject": "Password changed successfully",
+	  "subject": "Password changed on your NordicStream account",
 	  "sender": "support@nordicstream.io",
-	  "body": "Hello Jordan,\n\nThis email confirms that the password for your NordicStream account was successfully changed today at 2:47 PM GMT.\n\nIf you made this change, you do not need to do anything further.\n\nIf you did NOT make this change, please contact our support team immediately through the official NordicStream website at nordicstream.io/help. Do not reply to this email.\n\nFor your security, we recommend enabling two-factor authentication if you have not already done so.\n\nBest regards,\nNordicStream Security Team",
+	  "body": "Hello Jordan,\n\nThis email confirms that the password for your NordicStream account was successfully changed today at 2:47 PM GMT.\n\nIf you made this change, you don't need to do anything further.\n\nIf you did NOT make this change, please contact our support team immediately through the official NordicStream website at nordicstream.io/help. Do not reply to this email.\n\nFor your security, we recommend enabling two-factor authentication if you haven't already done so.\n\nBest regards,\nNordicStream Security Team",
 	  "type": "legit",
 	  "disposition": "forward",
 	  "conditions": {}

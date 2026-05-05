@@ -515,7 +515,7 @@ theme_override_font_sizes/font_size = 36
 text = "Day 1  00:00"
 horizontal_alignment = 2
 script = ExtResource("27_daytime")
-shift_duration_seconds = 120
+shift_duration_seconds = 300
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=174590262]
 tile_set = SubResource("TileSet_85qyi")
