@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://dqlahgwesxu70" path="res://Scripts/cursor.gd" id="5_xhupi"]
 [ext_resource type="Texture2D" uid="uid://dfax6udaoqysq" path="res://Assets/cursorClick.png" id="6_yk4qk"]
 [ext_resource type="AudioStream" uid="uid://dbf5pjaqoq0cd" path="res://Assets/sounds/mouseclick.mp3" id="7_4wvcl"]
-[ext_resource type="Script" path="res://Scripts/end_screen.gd" id="8_end"]
+[ext_resource type="Script" uid="uid://buwfvap4cfwmc" path="res://Scripts/end_screen.gd" id="8_end"]
 
 [node name="end_screen" type="Node2D" unique_id=701563412]
 script = ExtResource("8_end")
@@ -128,6 +128,7 @@ click_texture = ExtResource("6_yk4qk")
 [node name="Mouseclick" type="AudioStreamPlayer" parent="." unique_id=1929183328]
 unique_name_in_owner = true
 stream = ExtResource("7_4wvcl")
+bus = &"SFX"
 
 [connection signal="pressed" from="Background/buttons/ContinueBtn" to="." method="_on_continue_btn_pressed"]
 [connection signal="pressed" from="Background/buttons/MainMenuBtn" to="." method="_on_main_menu_btn_pressed"]

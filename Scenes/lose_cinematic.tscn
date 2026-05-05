@@ -121,11 +121,14 @@ libraries/ = SubResource("AnimationLibrary_hwh2d")
 [node name="Mouseclick" type="AudioStreamPlayer" parent="." unique_id=405819259]
 unique_name_in_owner = true
 stream = ExtResource("9_h1dga")
+bus = &"SFX"
 
 [node name="paperFall" type="AudioStreamPlayer" parent="." unique_id=1266557410]
 stream = ExtResource("10_paper")
 volume_db = -32.842
+bus = &"Ambience"
 
 [node name="loseSong" type="AudioStreamPlayer" parent="." unique_id=307715922]
 stream = ExtResource("11_losesong")
 volume_db = -30.409
+bus = &"Music"

@@ -537,6 +537,7 @@ hotspot = Vector2(35, 15)
 [node name="Mouseclick" type="AudioStreamPlayer" parent="TileMapLayer" unique_id=1566528861]
 unique_name_in_owner = true
 stream = ExtResource("24_vm72l")
+bus = &"SFX"
 
 [connection signal="pressed" from="gameController/desktop/mailIcon/mail/mailBackground/deleteBtn" to="gameController/desktop/mailIcon/mail" method="trigger_delete_action"]
 [connection signal="pressed" from="gameController/desktop/mailIcon/mail/mailBackground/forwardBtn" to="gameController/desktop/mailIcon/mail" method="trigger_forward_action"]

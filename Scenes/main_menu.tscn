@@ -107,6 +107,7 @@ click_texture = ExtResource("10_vr1f0")
 [node name="Mouseclick" type="AudioStreamPlayer" parent="." unique_id=113255707]
 unique_name_in_owner = true
 stream = ExtResource("11_vr1f0")
+bus = &"SFX"
 
 [connection signal="pressed" from="MainMenuBackground/buttons/StartKnap" to="." method="_on_start_knap_pressed"]
 [connection signal="pressed" from="MainMenuBackground/buttons/SettingsKnap" to="." method="_on_settings_knap_pressed"]

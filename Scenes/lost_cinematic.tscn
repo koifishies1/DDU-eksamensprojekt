@@ -118,13 +118,16 @@ hotspot = Vector2(35, 15)
 
 [node name="KeyboardSound" type="AudioStreamPlayer" parent="." unique_id=76610659]
 stream = ExtResource("7_1q1qj")
+bus = &"SFX"
 
 [node name="BootupSound" type="AudioStreamPlayer" parent="." unique_id=687360013]
 stream = ExtResource("8_6rk6d")
+bus = &"Ambience"
 
 [node name="Mouseclick" type="AudioStreamPlayer" parent="." unique_id=1845870579]
 unique_name_in_owner = true
 stream = ExtResource("9_h1dga")
+bus = &"SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=392593935]
 libraries/ = SubResource("AnimationLibrary_hwh2d")
