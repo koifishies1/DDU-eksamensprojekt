@@ -17,6 +17,8 @@ var read_emails: Dictionary = {}
 var flags: Dictionary = {}
 var actions: Dictionary = {}
 var disposal_results: Dictionary = {}
+var session_start_unix: int = 0
+var last_run_summary: Dictionary = {}
 
 var _delivery_counter: int = 0
 
@@ -24,7 +26,8 @@ var _delivery_counter: int = 0
 func _ready() -> void:
 	_load_email_database()
 	_load_state()
-	evaluate_unlocks()
+	_connect_progress_day_refresh()
+	call_deferred("_refresh_inbox_for_current_day")
 
 
 func _load_email_database() -> void:
@@ -106,13 +109,19 @@ func register_email(email_data: Dictionary) -> void:
 		push_warning("MailManager.register_email called without a valid id.")
 		return
 
+	var conditions: Dictionary = email_data.get("conditions", {}).duplicate(true)
+	if email_data.has("day"):
+		var day_num := int(email_data["day"])
+		conditions["min_day"] = day_num
+		conditions["max_day"] = day_num
+
 	var normalized := {
 		"id": id,
 		"subject": str(email_data.get("subject", "")),
 		"sender": str(email_data.get("sender", "Unknown")),
 		"body": str(email_data.get("body", "")),
 		"disposition": str(email_data.get("disposition", "")),
-		"conditions": email_data.get("conditions", {}),
+		"conditions": conditions,
 		"metadata": email_data.get("metadata", {}),
 	}
 	email_db[id] = normalized
@@ -245,6 +254,41 @@ func get_disposal_summary() -> Dictionary:
 	}
 
 
+func start_game_session() -> void:
+	session_start_unix = int(Time.get_unix_time_from_system())
+	_refresh_inbox_for_current_day()
+
+
+func _connect_progress_day_refresh() -> void:
+	var gp := get_node_or_null("/root/GameProgress")
+	if gp != null and gp.has_signal("night_changed"):
+		if not gp.night_changed.is_connected(_on_game_day_changed):
+			gp.night_changed.connect(_on_game_day_changed)
+
+
+func _on_game_day_changed(_new_day: int) -> void:
+	_refresh_inbox_for_current_day()
+
+
+func _refresh_inbox_for_current_day() -> void:
+	prune_inbox_for_current_day()
+	evaluate_unlocks()
+
+
+func get_elapsed_game_seconds() -> int:
+	if session_start_unix <= 0:
+		return 0
+	return maxi(0, int(Time.get_unix_time_from_system()) - session_start_unix)
+
+
+func set_last_run_summary(summary: Dictionary) -> void:
+	last_run_summary = summary.duplicate(true)
+
+
+func get_last_run_summary() -> Dictionary:
+	return last_run_summary.duplicate(true)
+
+
 func _get_expected_action(email_id: String) -> String:
 	if not email_db.has(email_id):
 		return "forward"
@@ -295,7 +339,42 @@ func evaluate_unlocks() -> void:
 		evaluate_unlocks()
 
 
+func prune_inbox_for_current_day() -> void:
+	var day := _get_current_game_day()
+	var to_remove: Array[String] = []
+	for email_id in inbox:
+		if not email_db.has(email_id):
+			continue
+		var email: Dictionary = email_db[email_id]
+		if not _day_conditions_met(email.get("conditions", {}), day):
+			to_remove.append(email_id)
+	for email_id in to_remove:
+		remove_email(email_id)
+
+
+func _get_current_game_day() -> int:
+	var gp := get_node_or_null("/root/GameProgress")
+	if gp != null and gp.has_method("get_current_night"):
+		return maxi(1, int(gp.call("get_current_night")))
+	return 1
+
+
+func _day_conditions_met(conditions: Dictionary, current_day: int) -> bool:
+	var has_min := conditions.has("min_day")
+	var has_max := conditions.has("max_day")
+	if not has_min and not has_max:
+		return true
+	if has_min and current_day < int(conditions["min_day"]):
+		return false
+	if has_max and current_day > int(conditions["max_day"]):
+		return false
+	return true
+
+
 func _conditions_met(conditions: Dictionary) -> bool:
+	if not _day_conditions_met(conditions, _get_current_game_day()):
+		return false
+
 	var required_flags: Array = conditions.get("required_flags", [])
 	for flag_name in required_flags:
 		if not has_flag(str(flag_name)):

@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://bqvebvq5tj3d4"]
+
+[ext_resource type="Script" uid="uid://b5xxulbabhhbc" path="res://Scripts/lose_cinematic.gd" id="1_k8cot"]
+[ext_resource type="Texture2D" uid="uid://lq67snowv6jt" path="res://Assets/loseScreen.png" id="2_pewjp"]
+[ext_resource type="FontFile" uid="uid://dqgpol2ay6t8e" path="res://Assets/ByteBounce.ttf" id="3_sckok"]
+[ext_resource type="Texture2D" uid="uid://cpech2udp2kxd" path="res://Assets/cursor.png" id="4_maaxr"]
+[ext_resource type="Script" uid="uid://dqlahgwesxu70" path="res://Scripts/cursor.gd" id="5_pwbpt"]
+[ext_resource type="Texture2D" uid="uid://dfax6udaoqysq" path="res://Assets/cursorClick.png" id="6_npaah"]
+[ext_resource type="AudioStream" uid="uid://dbf5pjaqoq0cd" path="res://Assets/sounds/mouseclick.mp3" id="9_h1dga"]
+[ext_resource type="AudioStream" uid="uid://lm6gwbiy2w1h" path="res://Assets/sounds/PaperFall.mp3" id="10_paper"]
+[ext_resource type="AudioStream" uid="uid://b2ue1p051n1hi" path="res://Assets/sounds/loseMusic.mp3" id="11_losesong"]
+
+[sub_resource type="Animation" id="Animation_g1wks"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(623, -419)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/TextureRect:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.19198622]
+}
+
+[sub_resource type="Animation" id="Animation_l4ah0"]
+resource_name = "falling"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9, 1.0666667, 2.0266666, 2.2, 2.9, 3.3666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(623, -419), Vector2(486.71002, -319.88), Vector2(492.92258, -286.90967), Vector2(655.53656, -150.34552), Vector2(640.3684, -110.666626), Vector2(426.64215, 33.333313), Vector2(584, 58.000015)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/TextureRect:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9, 1.0666667, 2.0266666, 2.2, 2.9, 3.363333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.19198622, 1.0576084, 1.1216837, 0.4534787, 0.4444329, 0.8821868, 0.95818573]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hwh2d"]
+_data = {
+&"RESET": SubResource("Animation_g1wks"),
+&"falling": SubResource("Animation_l4ah0")
+}
+
+[node name="LoseCinematic" type="Node2D" unique_id=1265242777]
+script = ExtResource("1_k8cot")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=348941250]
+offset_right = 1152.0
+offset_bottom = 644.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=1359646112]
+layout_mode = 0
+offset_left = 623.0
+offset_top = -419.0
+offset_right = 1237.9792
+offset_bottom = 93.0
+rotation = -0.19198622
+texture = ExtResource("2_pewjp")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=2120394272]
+layout_mode = 0
+offset_left = 324.0
+offset_top = 110.0
+offset_right = 846.0
+offset_bottom = 197.0
+theme_override_fonts/font = ExtResource("3_sckok")
+theme_override_font_sizes/font_size = 100
+text = "You got FIRED"
+
+[node name="cursor" type="TextureRect" parent="." unique_id=129957549]
+z_index = 2
+z_as_relative = false
+offset_left = -155.0
+offset_top = 295.0
+offset_right = -69.0
+offset_bottom = 378.0
+texture = ExtResource("4_maaxr")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("5_pwbpt")
+normal_texture = ExtResource("4_maaxr")
+click_texture = ExtResource("6_npaah")
+hotspot = Vector2(35, 15)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=392593935]
+libraries/ = SubResource("AnimationLibrary_hwh2d")
+
+[node name="Mouseclick" type="AudioStreamPlayer" parent="." unique_id=405819259]
+unique_name_in_owner = true
+stream = ExtResource("9_h1dga")
+
+[node name="paperFall" type="AudioStreamPlayer" parent="." unique_id=1266557410]
+stream = ExtResource("10_paper")
+volume_db = -32.842
+
+[node name="loseSong" type="AudioStreamPlayer" parent="." unique_id=307715922]
+stream = ExtResource("11_losesong")
+volume_db = -30.409

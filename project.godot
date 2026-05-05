@@ -25,10 +25,9 @@ buses/default_bus_layout="uid://dn7fl42cau6f"
 
 [autoload]
 
+GameProgress="res://Scripts/game_progress.gd"
 MailManager="res://Scripts/MailManager.gd"
 BootupAudio="res://Scripts/bootup_audio.gd"
-GameSession="res://Scripts/game_session.gd"
-TransitionFade="res://Scripts/transition_fade.gd"
 
 [physics]
 

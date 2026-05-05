@@ -26,12 +26,22 @@ var _current_index: int = -1
 var _session_hidden_ids: Dictionary = {}
 var _session_results: Dictionary = {}
 var _session_seen_ids: Dictionary = {}
+var _email_glitch_enabled := false
+var _email_glitch_elapsed := 0.0
+var _email_glitch_interval := 0.06
+var _base_subject_text := ""
+var _base_sender_text := ""
+var _base_body_text := ""
+const _GLITCH_CHARSET := "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
 
 
 func _ready() -> void:
 	_resolve_or_create_ui()
 	_wire_virus_controller()
 	_wire_buttons()
+	_update_logout_button_state()
+	set_process(false)
+	_start_session_if_possible()
 
 	if not use_preview_data:
 		var manager := get_node_or_null("/root/MailManager")
@@ -39,6 +49,27 @@ func _ready() -> void:
 			manager.inbox_updated.connect(_refresh_from_source)
 
 	_refresh_from_source()
+
+
+func _process(delta: float) -> void:
+	if not _email_glitch_enabled:
+		return
+	if _current_index < 0:
+		return
+	_email_glitch_elapsed += maxf(0.0, delta)
+	if _email_glitch_elapsed < _email_glitch_interval:
+		return
+	_email_glitch_elapsed = 0.0
+	_apply_live_email_glitch()
+
+
+func _start_session_if_possible() -> void:
+	if use_preview_data:
+		return
+	var manager := get_node_or_null("/root/MailManager")
+	if manager != null and manager.has_method("start_game_session"):
+		# MailManager is an autoload singleton; always reset so each run of game.tscn gets a fresh timer.
+		manager.call("start_game_session")
 
 
 func _resolve_or_create_ui() -> void:
@@ -51,9 +82,11 @@ func _resolve_or_create_ui() -> void:
 	_logout_button = get_node_or_null(logout_button_path) as BaseButton
 
 	if _inbox_list and _subject_label and _sender_label and _body_text:
+		_apply_mail_text_layout()
 		return
 
 	_build_fallback_ui()
+	_apply_mail_text_layout()
 
 
 func _build_fallback_ui() -> void:
@@ -116,18 +149,60 @@ func _build_fallback_ui() -> void:
 	right_col.add_child(_sender_label)
 
 	var body_scroll := ScrollContainer.new()
+	body_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	body_scroll.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	body_scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	right_col.add_child(body_scroll)
 
 	_body_text = RichTextLabel.new()
 	_body_text.name = "BodyText"
-	_body_text.fit_content = true
-	_body_text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	_body_text.scroll_active = true
+	_body_text.fit_content = false
+	_body_text.autowrap_mode = TextServer.AUTOWRAP_ARBITRARY
+	_body_text.scroll_active = false
 	_body_text.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	_body_text.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	_body_text.set_v_size_flags(Control.SIZE_SHRINK_BEGIN)
 	body_scroll.add_child(_body_text)
+
+
+func _apply_mail_text_layout() -> void:
+	if _body_text != null:
+		_body_text.bbcode_enabled = true
+		_body_text.fit_content = false
+		_body_text.scroll_active = false
+		_body_text.autowrap_mode = TextServer.AUTOWRAP_ARBITRARY
+		_body_text.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		_body_text.set_v_size_flags(Control.SIZE_SHRINK_BEGIN)
+		var parent := _body_text.get_parent()
+		if parent is ScrollContainer:
+			(parent as ScrollContainer).horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+		if not _body_text.resized.is_connected(_on_mail_body_text_resized):
+			_body_text.resized.connect(_on_mail_body_text_resized)
+		_queue_mail_body_height_refresh()
+	if _subject_label != null:
+		_subject_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		_subject_label.clip_text = false
+		_subject_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	if _sender_label != null:
+		_sender_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		_sender_label.clip_text = false
+		_sender_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+
+
+func _on_mail_body_text_resized() -> void:
+	_queue_mail_body_height_refresh()
+
+
+func _queue_mail_body_height_refresh() -> void:
+	if _body_text == null:
+		return
+	call_deferred("_run_mail_body_height_refresh")
+
+
+func _run_mail_body_height_refresh() -> void:
+	if _body_text == null or not is_instance_valid(_body_text) or not _body_text.is_inside_tree():
+		return
+	var h: float = _body_text.get_content_height()
+	_body_text.custom_minimum_size = Vector2(0.0, maxf(h, 1.0))
 
 
 func _wire_buttons() -> void:
@@ -136,6 +211,8 @@ func _wire_buttons() -> void:
 
 
 func _refresh_from_source() -> void:
+	var preferred_email_id := _get_current_email_id()
+
 	if use_preview_data:
 		_visible_emails = _get_preview_emails()
 	else:
@@ -151,7 +228,9 @@ func _refresh_from_source() -> void:
 			_visible_emails.append(email)
 
 	_rebuild_inbox_buttons()
-	_select_first_available()
+	if not _open_email_by_id(preferred_email_id):
+		_select_first_available()
+	_update_logout_button_state()
 
 
 func _get_preview_emails() -> Array[Dictionary]:
@@ -203,12 +282,11 @@ func _rebuild_inbox_buttons() -> void:
 		button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		button.alignment = HORIZONTAL_ALIGNMENT_LEFT
 		button.clip_text = true
+		button.autowrap_mode = TextServer.AUTOWRAP_OFF
+		button.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 		var sender: String = str(email.get("sender", "Unknown"))
 		var subject: String = str(email.get("subject", "(no subject)"))
-		var unread_prefix := ""
-		if not bool(email.get("is_read", false)):
-			unread_prefix = "* "
-		button.text = "%s%s - %s" % [unread_prefix, sender, subject]
+		button.text = "%s - %s" % [sender, subject]
 		button.pressed.connect(func() -> void: _open_email_at(i))
 		_inbox_list.add_child(button)
 
@@ -221,6 +299,22 @@ func _select_first_available() -> void:
 	_open_email_at(0)
 
 
+func _get_current_email_id() -> String:
+	if _current_index < 0 or _current_index >= _visible_emails.size():
+		return ""
+	return str(_visible_emails[_current_index].get("id", ""))
+
+
+func _open_email_by_id(email_id: String) -> bool:
+	if email_id.is_empty():
+		return false
+	for i in range(_visible_emails.size()):
+		if str(_visible_emails[i].get("id", "")) == email_id:
+			_open_email_at(i)
+			return true
+	return false
+
+
 func _open_email_at(index: int) -> void:
 	if index < 0 or index >= _visible_emails.size():
 		return
@@ -231,22 +325,32 @@ func _open_email_at(index: int) -> void:
 
 
 func _show_email(email: Dictionary) -> void:
+	_base_subject_text = str(email.get("subject", "(no subject)"))
+	_base_sender_text = "From: %s" % str(email.get("sender", "Unknown"))
+	_base_body_text = str(email.get("body", ""))
+
 	if _subject_label:
-		_subject_label.text = str(email.get("subject", "(no subject)"))
+		_subject_label.text = _base_subject_text
 	if _sender_label:
-		_sender_label.text = "From: %s" % str(email.get("sender", "Unknown"))
+		_sender_label.text = _base_sender_text
 	if _body_text:
-		_body_text.text = str(email.get("body", ""))
+		_body_text.text = _base_body_text
 		_body_text.scroll_to_line(0)
+	_apply_live_email_glitch()
+	_queue_mail_body_height_refresh()
 
 
 func _show_empty_state() -> void:
+	_base_subject_text = "No emails"
+	_base_sender_text = ""
+	_base_body_text = "No delivered emails yet."
 	if _subject_label:
-		_subject_label.text = "No emails"
+		_subject_label.text = _base_subject_text
 	if _sender_label:
-		_sender_label.text = ""
+		_sender_label.text = _base_sender_text
 	if _body_text:
-		_body_text.text = "No delivered emails yet."
+		_body_text.text = _base_body_text
+	_queue_mail_body_height_refresh()
 
 
 func _mark_read_if_real(email: Dictionary) -> void:
@@ -286,6 +390,7 @@ func _dispose_current_email(chosen_action: String) -> void:
 			_show_empty_state()
 		else:
 			_open_email_at(min(_current_index, _visible_emails.size() - 1))
+		_update_logout_button_state()
 		return
 
 	var manager := get_node_or_null("/root/MailManager")
@@ -300,8 +405,8 @@ func _dispose_current_email(chosen_action: String) -> void:
 			"expected_action": expected,
 			"correct": is_correct
 		}
-		if not is_correct:
-			request_virus_release.emit()
+		if _should_trigger_virus(chosen_action, expected):
+			_try_request_virus_release()
 		_visible_emails.remove_at(_current_index)
 		_rebuild_inbox_buttons()
 		if _visible_emails.is_empty():
@@ -309,13 +414,18 @@ func _dispose_current_email(chosen_action: String) -> void:
 			_show_empty_state()
 		else:
 			_open_email_at(min(_current_index, _visible_emails.size() - 1))
+		_update_logout_button_state()
 		return
 
 	if manager and manager.has_method("classify_and_dispose_email") and not email_id.is_empty():
 		var result: Variant = manager.call("classify_and_dispose_email", email_id, chosen_action)
-		if result is Dictionary and not bool(result.get("correct", true)):
-			request_virus_release.emit()
+		if result is Dictionary and _should_trigger_virus(
+			chosen_action,
+			str(result.get("expected_action", "forward"))
+		):
+			_try_request_virus_release()
 	_refresh_from_source()
+	_update_logout_button_state()
 
 
 func _get_expected_action(email: Dictionary) -> String:
@@ -324,6 +434,19 @@ func _get_expected_action(email: Dictionary) -> String:
 	if expected != "forward" and expected != "delete":
 		expected = "forward"
 	return expected
+
+
+func _try_request_virus_release() -> void:
+	var gp := get_node_or_null("/root/GameProgress")
+	if gp == null or not gp.has_method("viruses_enabled_this_night"):
+		return
+	if not bool(gp.call("viruses_enabled_this_night")):
+		return
+	request_virus_release.emit()
+
+
+func _should_trigger_virus(chosen_action: String, expected_action: String) -> bool:
+	return chosen_action == "forward" and expected_action == "delete"
 
 
 func _wire_virus_controller() -> void:
@@ -339,6 +462,10 @@ func _wire_virus_controller() -> void:
 
 
 func _on_logout_pressed() -> void:
+	if _visible_emails.size() > 0:
+		_update_logout_button_state()
+		return
+
 	var manager := get_node_or_null("/root/MailManager")
 	if manager == null:
 		return
@@ -368,18 +495,72 @@ func _on_logout_pressed() -> void:
 			"score_percent": int(round(accuracy * 100.0))
 		}
 
-	var message := "Day complete!\n\n"
-	message += "Correct: %d\n" % int(summary.get("correct", 0))
-	message += "Incorrect: %d\n" % int(summary.get("incorrect", 0))
-	message += "Disposed: %d/%d\n" % [int(summary.get("disposed", 0)), int(summary.get("total", 0))]
-	message += "Pending: %d\n" % int(summary.get("pending", 0))
-	message += "Score: %d%%" % int(summary.get("score_percent", 0))
+	var elapsed_seconds: int = 0
+	if manager.has_method("get_elapsed_game_seconds"):
+		elapsed_seconds = int(manager.call("get_elapsed_game_seconds"))
+	summary["elapsed_seconds"] = maxi(0, elapsed_seconds)
+	if manager.has_method("set_last_run_summary"):
+		manager.call("set_last_run_summary", summary)
 
-	var dialog := AcceptDialog.new()
-	dialog.title = "End of Day"
-	dialog.dialog_text = message
-	dialog.unresizable = true
-	get_tree().root.add_child(dialog)
-	dialog.confirmed.connect(dialog.queue_free)
-	dialog.canceled.connect(dialog.queue_free)
-	dialog.popup_centered()
+	if not use_preview_data:
+		var gp := get_node_or_null("/root/GameProgress")
+		if gp != null and gp.has_method("complete_shift_end_of_day"):
+			gp.call("complete_shift_end_of_day")
+
+	get_tree().change_scene_to_file("res://Scenes/end_screen.tscn")
+
+
+func _update_logout_button_state() -> void:
+	if _logout_button == null:
+		return
+	_logout_button.disabled = _visible_emails.size() > 0
+
+
+func set_email_glitch_virus_active(active: bool = true) -> void:
+	_email_glitch_enabled = active
+	_email_glitch_elapsed = 0.0
+	set_process(_email_glitch_enabled)
+	if _email_glitch_enabled:
+		_apply_live_email_glitch()
+
+
+func _apply_live_email_glitch() -> void:
+	if not _email_glitch_enabled:
+		return
+	if _subject_label:
+		_subject_label.text = _glitch_text(_base_subject_text, 0.20)
+	if _sender_label:
+		_sender_label.text = _glitch_text(_base_sender_text, 0.14)
+	if _body_text:
+		_body_text.text = _glitch_text(_base_body_text, 0.10)
+		_queue_mail_body_height_refresh()
+
+
+func _glitch_text(source: String, chance: float) -> String:
+	if source.is_empty():
+		return source
+	var out := ""
+	var p := clampf(chance, 0.0, 1.0)
+	var in_bbcode_tag := false
+	for i in range(source.length()):
+		var ch := source[i]
+		if ch == "[":
+			in_bbcode_tag = true
+			out += ch
+			continue
+		if in_bbcode_tag:
+			out += ch
+			if ch == "]":
+				in_bbcode_tag = false
+			continue
+		var code := source.unicode_at(i)
+		var is_space := ch == " " or ch == "\n" or ch == "\t"
+		if is_space or code < 33:
+			out += ch
+			continue
+		if randf() < p:
+			var idx := randi() % _GLITCH_CHARSET.length()
+			out += _GLITCH_CHARSET[idx]
+		else:
+			out += ch
+	return out
